@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% block title %}Docs{% endblock %}
+
+{% block trail %}
+        <li><a href="/">Home</a></li>
+        <li>Docs</li>
+        <li class="current"><a href="{{ url_for('docs.dial') }}">Dial-up VPN</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "docs/en/sidenav.html" %}
+
+    <!-- start of issue table -->
+    <div class="large-10 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h3>Dial-up VPN Guide</h3>
+            <hr />
+            <h5>Scenario:</h5>
+            <ol>
+              <li>Classic network scenario. interconnect between machines cross-account or cross-region.</li>
+              <li>VPC network scenarios. Administrator access VPC conduct private network access and management.</li>
+            </ol>
+
+            <h3>Classic network scenarios</h3>
+            <hr />
+            <img src="{{ url_for('docs.static', filename='img/en/dial_08.png') }}">
+            <p>As shown above, the user in Hangzhou, Beijing, Qingdao region with different accounts each bought a flat-ECS VM, now want to carry out within the network communication between these three VM, we need these three to dial in to the same VM a VPN network using VPN address assignment to communicate.<br />
+            In this example: VM Hangzhou elected VPN GateWay, Beijing and Qingdao, Hangzhou VM dial to the VPN. Use VPN assigned address 10.8.8.7,10.8.8.9 communicate with each other.</p>
+            <h5>First, start dialing VPN service</h5>
+            <hr />
+            <p>Enter dialup VPN "VPN Service Management" page, make sure GateWay VM started dialing VPN services.</p>
+            <img src="{{ url_for('docs.static', filename='img/en/dial_02.png') }}">
+            <ul>
+              <li>Start VPN service: Start the machine only dial VPN.</li>
+              <li>Stop VPN service: Stop the machine dial VPN. Tunnel has been connected to Disconnect all.</li>
+              <li>Install &amp; reload configuration: dial-up VPN "Settings", this action automatically. But in some cases, if you want to regenerate the VPN server configuration, you can do this manually.</li>
+            </ul>
+            <h5>Second, setup</h5>
+            <hr />
+            <img src="{{ url_for('docs.static', filename='img/en/dial_09.png') }}">
+            <ul>
+              <li>Communication protocol: optional "UDP", "TCP". NOTE: After each save changes, please re-download the client configuration files.</li>
+              <li>Virtual IP address pool: that VPN Server assigned to the client's virtual IP address pool. In this example: 10.8.8.0/24</li>
+              <li>Allow inter-client communication: in this example, here please choose "Yes."</li>
+              <li>Allow a single account doing multiple login: Optional "yes" or "no."</li>
+              <li>Subnet segment: that allow access to dial-up client subnet. This example does not require client access subnets, fill in the private network IP VPN GateWay VM can: 10.171.112.120/32.</li>
+            </ul>
+            <h5>Third, add the dial-up VPN account</h5>
+            <hr />
+            <p>Click on the "Add Account" button to add the account:</p>
+            <img src="{{ url_for('docs.static', filename='img/en/dial_05.png') }}">
+            <ul>
+              <li>Account name: can only contain the following characters: numbers, letters, underscore.</li>
+              <li>Password: can only contain the following characters: numbers, letters, underscore.</li>
+            </ul>
+            <h5>Fourth, configure the client</h5>
+            <hr />
+            <p>Click on "client download" button, you can download the VPN client and the appropriate configuration files.</p>
+            <img src="{{ url_for('docs.static', filename='img/en/dial_07.png') }}">
+            <ul>
+              <li>Modify the configuration file: The configuration file "remote IP" field modify GateWay VM's public IP address.</li>
+              <li>Windows platforms: After installing the client, the configuration file client.ovpn and ca.crt files into config file installation directory folder. Then start openvpn-gui.exe, connect the prompts.</li>
+              <li>Linux platforms: Perform at profiles client.conf and ca.crt directory command: openvpn client.conf, connect the prompts. To form a daemon in the background, do: openvpn client.conf &amp; to establish a connection.</li>
+              <li>Note: When you download Linux platform client, you need to turn off certificate validation. Please add parameters wget --no-check-certificate, curl please add parameters --insecure.</li>
+            </ul>
+            <h5>Fifth, view account list</h5>
+            <hr />
+            <p>Click "Account List" button, you can view the account list that have been added. If the account has dial-in VPN, you will see more detailed information:</p>
+            <img src="{{ url_for('docs.static', filename='img/en/dial_10.png') }}">
+            <ul>
+              <li>Status: Due VPN keepalive mechanism, there will be a delay of about one minute.</li>
+            </ul>
+            <h5>Sixth, the use of VPN IP communication</h5>
+            <hr />
+            <p>Now, you can use VPN assigned address 10.8.8.7,10.8.8.9 communicate with each other up.</p>
+
+            <h3>VPC network scenarios</h3>
+            <hr />
+            <img src="{{ url_for('docs.static', filename='img/en/dial_01.png') }}">
+            <p>As shown above, the administrator wants access VPC2 within a private network to manage maintenance VM1 and VM2. Wherein, VPC2 have a use VPN / SNAT mirror mounted GateWay VM, and bind the EIP.<br />
+            In this example: Administrator from the public network through the VPN tunnel access VPC2 of 192.168.0.3.</p>
+            <h5>First, start dialing VPN service</h5>
+            <hr />
+            <p>Enter dialup VPN "VPN Service Management" page, make sure that the GateWay VM VPC VPN service started dialing.</p>
+            <img src="{{ url_for('docs.static', filename='img/en/dial_02.png') }}">
+            <ul>
+              <li>Start VPN service: Start the machine only dial VPN.</li>
+              <li>Stop VPN service: Stop the machine dial VPN. Tunnel has been connected to Disconnect all.</li>
+              <li>Install &amp; reload configuration: dial-up VPN "Settings", this action automatically. But in some cases, if you want to regenerate the VPN server configuration, you can do this manually.</li>
+            </ul>
+            <h5>Second, setup</h5>
+            <hr />
+            <img src="{{ url_for('docs.static', filename='img/en/dial_03.png') }}">
+            <ul>
+              <li>Communication protocol: optional "UDP", "TCP". NOTE: After each save changes, please re-download the client configuration files.</li>
+              <li>Virtual IP address pool: that VPN Server assigned to the client's virtual IP address pool. In this example: 10.8.8.0/24</li>
+              <li>Allow inter-client communication: in this example, here please choose "Yes."</li>
+              <li>Allow a single account doing multiple login: Optional "yes" or "no."</li>
+              <li>Subnet segment: that allow access to dial-up client subnet. This example does not require client access subnets, fill in the private network IP VPN GateWay VM can: 10.171.112.120/32.</li>
+            </ul>
+            <h5>Third, configure SNAT</h5>
+            <hr />
+            <p>After dialing VPN "set up" in order to allow administrators to access VPC2 private network, you need to manually adjust the corresponding SNAT settings!</p>
+            <img src="{{ url_for('docs.static', filename='img/en/dial_04.png') }}">
+            <p>In the above example, the virtual address pool 10.8.0.0/24, subnet as 192.168.0.0/24, you need to configure SNAT: 10.8.0.0/24 ➔ 192.168.0.1</p>
+            <h5>Fourth, add the dial-up VPN account</h5>
+            <hr />
+            <p>Click on the "Add Account" button to add the account:</p>
+            <img src="{{ url_for('docs.static', filename='img/en/dial_05.png') }}">
+            <ul>
+              <li>Account name: can only contain the following characters: numbers, letters, underscore.</li>
+              <li>Password: can only contain the following characters: numbers, letters, underscore.</li>
+            </ul>
+            <h5>Fifth, configure the client</h5>
+            <hr />
+            <p>Click on "client download" button, you can download the VPN client and the appropriate configuration files.</p>
+            <img src="{{ url_for('docs.static', filename='img/en/dial_07.png') }}">
+            <ul>
+              <li>Modify the configuration file: The configuration file "remote IP" field modify GateWay VM's public IP address.</li>
+              <li>Windows platforms: After installing the client, the configuration file client.ovpn and ca.crt files into config file installation directory folder. Then start openvpn-gui.exe, connect the prompts.</li>
+              <li>Linux platforms: Perform at profiles client.conf and ca.crt directory command: openvpn client.conf, connect the prompts. To form a daemon in the background, do: openvpn client.conf &amp; to establish a connection.</li>
+              <li>Note: When you download Linux platform client, you need to turn off certificate validation. Please add parameters wget --no-check-certificate, curl please add parameters --insecure.</li>
+            </ul>
+            <h5>Sixth, view account list</h5>
+            <hr />
+            <p>Click "Account List" button, you can view the account list that have been added. If the account has dial-in VPN, you will see more detailed information:</p>
+            <img src="{{ url_for('docs.static', filename='img/en/dial_06.png') }}">
+            <ul>
+              <li>Status: Due VPN keepalive mechanism, there will be a delay of about one minute.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of issue table -->
+{% endblock content %}

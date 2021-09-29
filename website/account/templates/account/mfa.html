@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock title %}
+
+{% block header_bar %}
+{% endblock header_bar %}
+
+{% block header %}
+{% endblock header %}
+
+{% block trail_all %}
+{% endblock trail_all %}
+
+{% block content %}
+  <!-- start of login -->
+    <div id="login" class="large-4 large-centered columns">
+      <div class="header">
+        <h4>{{ gettext('mfa two step verification') }}</h4>
+      </div>
+      <form method='POST' action='{{ url_for("account.mfa_verify") }}'>
+        <div class="row">
+          <div class="large-3 columns">
+            {{ form.otp_code.label(class="right inline") }}
+          </div>
+          <div class="large-9 columns">
+            {% if form.otp_code.errors %}
+            {{ form.otp_code(class="error", value=form.otp_code.value) }}
+            <small class="error">{{ form.otp_code.errors[0] }}</small>
+            {% else %}
+            {{ form.otp_code(placeholder=gettext('otp code')) }}
+            {% endif %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="lagre-4 large-offset-3 columns">
+            <button type="submit" class="button tiny">{{ gettext('verify') }}</button>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+          </div>
+        </div>
+      </form>
+    </div>
+  <!-- end of login -->
+{% endblock content %}
+
+

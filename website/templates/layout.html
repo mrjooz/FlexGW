@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="zh-cmn-Hans" > <![endif]-->
+<html class="no-js" lang="zh-cmn-Hans" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %} | {{ gettext('gateway') }}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation-icons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  {% block head %}{% endblock head %}
+
+  <script src="{{ url_for('static', filename='js/vendor/modernizr.js') }}"></script>
+</head>
+
+<body>
+  {% block header %}
+  <!-- start of header -->
+  <header class="contain-to-grid">
+    <div class="row">
+      <div class="large-5 columns">
+        <a href="/"><h2>{{ gettext('flex gateway') }} {{ version }}</h2></a>
+      </div>
+      <div class="large-7 columns">
+        <div style="float:right; width:367px;" >
+          <ul id="top-ads" data-orbit data-options="animation:slide;
+                    pause_on_hover:true;
+                    resume_on_mouseout:true;
+                    animation_speed:500;
+                    timer_speed: 5000;
+                    navigation_arrows:false;
+                    slide_number:false;
+                    variable_height: true;">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- end of header -->
+  {% endblock header %}
+
+  {% block header_bar %}
+  <!-- start of header-bar -->
+  <div id="nav" class="row">
+    <div class="large-12 columns">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="/"><i class="fi-home"></i></a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#">{{ gettext('menu') }}</a></li>
+        </ul>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="left">
+            <li{% if 'sts.' in request.endpoint %} class="active" {% endif %}><a href="/vpn/sts/">{{ gettext('ipsec vpn') }}</a></li>
+            <li{% if 'dial.' in request.endpoint %} class="active" {% endif %}><a href="/vpn/dial/">{{ gettext('dial vpn') }}</a></li>
+            <li{% if 'snat.' in request.endpoint %} class="active" {% endif %}><a href="/snat">{{ gettext('snat') }}</a></li>
+            <li{% if 'tcp.' in request.endpoint %} class="active" {% endif %}><a href="/tcp">{{ gettext('tcp tunnel') }}</a></li>
+            <li{% if 'gre.' in request.endpoint %} class="active" {% endif %}><a href="/gre">{{ gettext('gre tunnel') }}</a></li>
+          </ul>
+          <ul class="right">
+            <li{% if 'docs.' in request.endpoint %} class="active" {% endif %}><a href="/docs"><i class="fi-page-doc"> </i>{{ gettext('docs') }}</a></li>
+            <li><a href="#" id="checkupdate">{{ gettext('check for update') }}</a></li>
+            <li><a href="/settings"><i class="fi-torso-business"> </i>{{ g.account }} {{ gettext('settings') }}</a></li>
+            <li><a href="/logout">{{ gettext('logout') }}</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+  <!-- end of header-bar -->
+  {% endblock header_bar %}
+
+  {% block trail_all %}
+  <!-- start of trail -->
+  <div id="trail" class="row">
+    <div class="large-12 columns">
+      <ul class="breadcrumbs">
+        {% block trail %}{% endblock trail %}
+      </ul>
+    </div>
+  </div>
+  <!-- end of trail -->
+  {% endblock trail_all %}
+
+  <!-- start of content -->
+  <div id="content" class="row">
+    {% block content %}{% endblock content %}
+  </div>
+  <!-- end of content -->
+  <!-- start of ads -->
+  <div id="ads" class="row">
+    <div class="large-12 columns">
+      <ul id="bottom-ads" data-orbit data-options="animation:slide;
+                  pause_on_hover:true;
+                  resume_on_mouseout:true;
+                  animation_speed:500;
+                  timer_speed: 5000;
+                  navigation_arrows:false;
+                  slide_number:false;
+                  variable_height: true;
+                  bullets: false;">
+      </ul>
+    </div>
+  </div>
+  <!-- end of ads -->
+  <!-- start of footer -->
+  <footer class="row">
+    <div class="large-6 columns">
+      <small>
+      </small>
+    </div>
+    <div class="large-6 columns">
+      <small class="right">
+        © 2021
+      </small>
+    </div>
+  </footer>
+  <!-- end of footer -->
+
+  <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/checkupdate.js') }}"></script>
+  <!-- <script src="{{ url_for('static', filename='js/ads.js') }}"></script> -->
+  <script>
+    $(document).foundation();
+  </script>
+  {% block jsplugin %}{% endblock jsplugin %}
+</body>
+
+</html>

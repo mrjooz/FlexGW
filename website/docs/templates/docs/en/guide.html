@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block title %}Docs{% endblock %}
+
+{% block trail %}
+        <li><a href="/">Home</a></li>
+        <li>Docs</li>
+        <li class="current"><a href="{{ url_for('docs.index') }}">介绍</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "docs/en/sidenav.html" %}
+
+    <!-- start of issue table -->
+    <div class="large-10 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h3>Introduction</h3>
+            <hr />
+            <p>This program provides a VPN, SNAT basic services.</p>
+            <h5>Mainly provides the following functions:</h5>
+            <ol>
+              <li>IPSec Site-to-Site feature. It can quickly help you to connect two ECS in different private network through IPSec Site-to-Site protocol</li>
+              <li>Dial-up VPN feature.  You can connect to ECS through dial-up VPN mode, to do routine maintenance and management.</li>
+              <li>SNAT feature. You can easily set the Source NAT, to allow VM in VPC private network access the Internet through the Gateway VM.</li>
+            </ol>
+            <h5>Typical scenarios include:</h5>
+            <ol>
+              <li>Use VPN to connect the machines in cloud and the machines in IDC side (Site-to-Site).</li>
+              <li>Connect multiple VPC (include same Region / different Region) through VPN (Site-to-Site).</li>
+              <li>Connect to machine in cloud through dial-up VPN, then use the VPN private IP address to communicate with other machines.</li>
+            </ol>
+            <h5>Login Description:</h5>
+            <ul>
+              <li>Login address: https: //public IP of the VM with flexGW installed</li>
+              <li>Use VM OS account and password to login to the system.</li>
+            </ul>
+
+            <h3>Software components</h3>
+            <hr />
+            <h5>Strongswan</h5>
+            <ul>
+              <li>Version: 5.7.2</li>
+              <li>Website: http://www.strongswan.org</li>
+            </ul>
+            <h5>OpenVPN</h5>
+            <ul>
+              <li>Version: 2.4.11</li>
+              <li>Website: https://openvpn.net/index.php/open-source.html</li>
+            </ul>
+
+            <h3>Program Description</h3>
+            <hr />
+            <h5>FlexGW (i.e. this program)</h5>
+            <ul>
+              <li>Directory: /usr/local/flexgw</li>
+              <li>Database file: /usr/local/flexgw/instance/website.db</li>
+              <li>Startup script: /etc/init.d/flexgw 或/usr/local/flexgw/website_console</li>
+              <li>Log directory: /usr/local/flexgw/logs</li>
+              <li>Utility scripts directory: /usr/local/flexgw/scripts</li>
+              <li>Command：service flexgw start/stop/restart</li>
+            </ul>
+            <p>"Database File" to save all VPN configuration,  please backup them periodicly. If the database is corrupted, use the script initdb.py in "utility scripts directory” to  initialize the database, it will clears all configurations.</p>
+            <h5>Strongswan</h5>
+            <ul>
+              <li>Directory: /etc/strongswan</li>
+              <li>Log file: /var/log/strongswan.charon.log</li>
+              <li>Startup script: /usr/sbin/strongswan </li>
+              <li>Command：strongswan start/status/stop/restart </li>
+            </ul>
+            <p>If strongswan.conf is corrupted, you can use the backup files in /usr/local/flexgw/rc/strongswan.conf  to recover.</p>
+            <p>ipsec.conf and ipsec.secrets files are generated from the files with same name in /usr/local/flexgw/website/vpn/sts/templates/sts, do not modify them.</p>
+            <h5>OpenVPN</h5>
+            <ul>
+              <li>Directory: /etc/openvpn</li>
+              <li>Log file: /etc/openvpn/server/openvpn.log</li>
+              <li>Status file: /etc/openvpn/server/openvpn-status.log</li>
+              <li>Startup script: /usr/lib/systemd/system/openvpn-server@.service </li>
+              <li>Command：systemctl start/status/stop/restart openvpn-server@server.service</li>
+            </ul>
+            <p>server.conf generated from the file with same name in /usr/local/flexgw/website/vpn/dial/templates/dial, don’t modify it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of issue table -->
+{% endblock content %}

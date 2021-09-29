@@ -1,0 +1,16 @@
+    <!-- start of side-nav -->
+    <div id="side-nav" class="large-2 columns">
+      {% set side_bar = [
+        ('dial.index', 'list', gettext('accounts list')),
+        ('dial.add', 'plus', gettext('create account')),
+        ('dial.settings', 'widget', gettext('settings')),
+        ('dial.console', 'wrench', gettext('vpn service management')),
+        ('dial.download', 'download', gettext('download client'))
+      ] -%}
+      <ul class="side-nav">
+        {% for endpoint, icon, caption in side_bar %}
+          <li{% if request.endpoint == endpoint %} class="active" {% endif %}><a href="{{ url_for(endpoint) }}"><i class="fi-{{ icon }}"> </i>{{ caption }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- end of side-nav -->

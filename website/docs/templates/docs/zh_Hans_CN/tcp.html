@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %}Docs{% endblock %}
+
+{% block trail %}
+        <li><a href="/">Home</a></li>
+        <li>Docs</li>
+        <li class="current"><a href="{{ url_for('docs.snat') }}">SNAT</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "docs/zh_Hans_CN/sidenav.html" %}
+
+    <!-- start of issue table -->
+    <div class="large-10 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h3>TCP 隧道使用指南</h3>
+            <hr />
+            <p>当您想要访问VPC内部某台ECS的特定端口，可以通过本功能将该端口映射到FlexGW机器，然后通过FlexGW的EIP访问。</p>
+            <h5>第一、添加 TCP 隧道条目</h5>
+            <hr />
+            <p>进入 TCP 隧道 的「TCP 隧道新增」页面：</p>
+            <img src="{{ url_for('docs.static', filename='img/zh_Hans_CN/tcp_01.png') }}">
+            <ul>
+              <li>本地端口：为FlexGW为转发打开的端口。本例中为：50000</li>
+              <li>目标IP：为 VPC 中需要访问公网的私网IP。本例中为：10.0.0.1</li>
+              <li>目标端口：为目标机器的端口。本例中为：3306</li>
+            </ul>
+
+            <h5>第二、查看 TCP 隧道列表</h5>
+            <hr />
+            <p>新增 TCP 隧道条目之后，会自动跳转到「TCP 隧道列表」页面，即可看到：</p>
+            <img src="{{ url_for('docs.static', filename='img/zh_Hans_CN/tcp_02.png') }}">
+            <ul>
+              <li>本地端口：为FlexGW为转发打开的端口</li>
+              <li>目标IP：为 VPC 中需要访问公网的私网IP。本例中为：10.0.0.1</li>
+              <li>目标端口：为目标机器的端口。本例中为：3306</li>
+              <li>关闭：点击「关闭」按钮，即可关闭该 TCP 隧道，且立即生效。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of issue table -->
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block title %}{{ gettext('gre tunnels list') }}{% endblock %}
+
+{% block trail %}
+        <li><a href="/">{{ gettext('home') }}</a></li>
+        <li><a href="{{ url_for('gre.index') }}">{{ gettext('gre') }}</a></li>
+        <li class="current"><a href="{{ url_for('gre.index') }}">{{ gettext('gre tunnels list') }}</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "gre/sidenav.html" %}
+
+    <!-- start of tcp proxy connection table -->
+    <div id="tcp-list" class="large-10 columns">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div data-alert class="alert-box {{ category }}">
+        {{ message }}
+        <a href="#" class="close">&times;</a>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div class="row">
+        <div class="large-12 columns">
+          <table>
+            <thead>
+              <tr>
+                <th>{{ gettext('local router ip') }}</th>
+                <th>{{ gettext('remote router ip') }}</th>
+                <th>{{ gettext('subnet') }}</th>
+                <th>{{ gettext('operations') }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if tunnels %}
+              {% for tunnel in tunnels%}
+              <tr>
+                <td>{{ tunnel.local_router_ip }}</td>
+                <td>{{ tunnel.remote_router_ip }}</td>
+                <td>{{ tunnel.subnet }}</td>
+                <td>
+                  <form method="POST" action="{{ url_for('gre.delete') }}">
+                    <input type="hidden" name="tunnel_id" value="{{ tunnel.id }}" />
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                    <button class="button bitty alert gre-del">{{ gettext('close') }}</button>
+                  </form>
+                </td>
+              </tr>
+              {% endfor %}
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- end of snat table -->
+{% endblock content %}

@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block title %}VPN Console{% endblock title%}
+
+{% block trail %}
+  <li><a href="/">{{ gettext('home') }}</a></li>
+  <li>VPN</li>
+  <li class="current"><a href="{{ url_for('dial.console') }}">{{ gettext('vpn console') }}</a></li>
+{% endblock trail %}
+
+{% block content %}
+  {% include "dial/sidenav.html" %}
+
+    <!-- start of console content -->
+    <div class="large-10 columns">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div data-alert class="alert-box {{ category }}">
+        {{ message }}
+        <a href="#" class="close">&times;</a>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div data-alert class="alert-box {% if status %} success {% else %} alert {% endif %}">
+        {% if status %}
+        OpenVPN {{ gettext('service running.') }}
+        {% else %}
+        OpenVPN {{ gettext('service is not running.') }}
+        {% endif %}
+      </div>
+      <form method="POST" action="{{ url_for('dial.console') }}">
+        <div class="row">
+          <div class="large-3 columns">
+            <ul class="pricing-table">
+              <li class="title">{{ gettext('start vpn service') }}</li>
+              <li class="description">{{ gettext('start vpn service. It will not interupt the vpn service which is running.')}}</li>
+              <li class="cta-button">
+              {% if status %}
+              {{ form.start(class="alert tiny button disabled", disabled="disabled") }}
+              {% else %}
+              {{ form.start(class="alert tiny button") }}
+              {% endif %}
+              </li>
+            </ul>
+          </div>
+          <div class="large-3 columns">
+            <ul class="pricing-table">
+              <li class="title">{{ gettext('stop vpn service') }}</li>
+              <li class="description">{{ gettext('stop vpn service. when service is down, all tunnels will be closed.') }}</li>
+              <li class="cta-button">
+              {% if status %}
+              {{ form.stop(class="alert tiny button") }}
+              {% else %}
+              {{ form.stop(class="alert tiny button disabled", disabled="disabled") }}
+              {% endif %}
+              </li>
+            </ul>
+          </div>
+          <div class="large-3 columns end">
+            <ul class="pricing-table">
+              <li class="title">{{ gettext('config install & reload') }}</li>
+              <li class="description">{{ gettext('install new vpn config and make it effect. recommend using this after edit vpn config.') }}</li>
+              <li class="cta-button">
+              {% if status %}
+              {{ form.re_load(class="alert tiny button") }}
+              {% else %}
+              {{ form.re_load(class="alert tiny button disabled", disabled="disabled") }}
+              {% endif %}
+              </li>
+            </ul>
+          </div>
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        </div>
+      </form>
+    </div>
+    <!-- end of console content -->
+{% endblock content %}

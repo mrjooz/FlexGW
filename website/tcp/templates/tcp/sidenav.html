@@ -1,0 +1,14 @@
+    <!-- start of side-nav -->
+    <div id="side-nav" class="large-2 columns">
+      {% set side_bar = [
+        ('tcp.index', 'list', gettext('tcp tunnels list')),
+        ('tcp.add', 'plus', gettext('create tcp tunnel')),
+        ('tcp.console', 'wrench', gettext('manage tcp tunnel')),
+      ] -%}
+      <ul class="side-nav">
+        {% for endpoint, icon, caption in side_bar %}
+          <li{% if request.endpoint == endpoint %} class="active" {% endif %}><a href="{{ url_for(endpoint) }}"><i class="fi-{{ icon }}"> </i>{{ caption }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- end of side-nav -->

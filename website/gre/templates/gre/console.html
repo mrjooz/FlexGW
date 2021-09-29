@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}GRE Console{% endblock title%}
+
+{% block trail %}
+        <li><a href="/">{{ gettext('home') }}</a></li>
+        <li><a href="{{ url_for('gre.index') }}">{{ gettext('gre') }}</a></li>
+        <li class="current"><a href="{{ url_for('gre.console') }}">{{ gettext('gre console')}}</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "gre/sidenav.html" %}
+
+    <!-- start of console content -->
+    <div class="large-10 columns">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div data-alert class="alert-box {{ category }}">
+        {{ message }}
+        <a href="#" class="close">&times;</a>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <form method="POST" action="{{ url_for('gre.console') }}">
+        <div class="row">
+          <div class="large-3 columns">
+            <ul class="pricing-table">
+              <li class="title">{{ gettext('ensure all tunnels') }}</li>
+              <li class="description">
+                {{ gettext('ensure all gre tunnels, will not disconnect exist tunnels.') }}
+              </li>
+              <li class="cta-button">
+              {{ form.ensure(class="alert tiny button") }}
+              </li>
+            </ul>
+          </div>
+          <div class="large-3 columns">
+            <ul class="pricing-table">
+              <li class="title">{{ gettext('reset all tunnels') }}</li>
+              <li class="description">
+                {{ gettext('reset all tunnels, disconnect all tunnels and reconnect.') }}
+              </li>
+              <li class="cta-button">
+              {{ form.reset(class="alert tiny button") }}
+              </li>
+          </div>
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        </div>
+      </form>
+    </div>
+    <!-- end of console content -->
+{% endblock content %}

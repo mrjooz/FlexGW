@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block title %}VPN Dial{% endblock title%}
+
+{% block trail %}
+        <li><a href="/">{{ gettext('home') }}</a></li>
+        <li>{{ gettext('vpn') }}</li>
+        <li class="current"><a href="{{ url_for('dial.index') }}">{{ gettext('dial') }}</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "dial/sidenav.html" %}
+
+    <!-- start of vpn table -->
+    <div class="large-10 columns">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div data-alert class="alert-box {{ category }}">
+        {{ message }}
+        <a href="#" class="close">&times;</a>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div data-alert class="alert-box info">
+        {{ gettext('notice: after download config file, replace the "EIP" with public ip of your server.') }}
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>{{ gettext('description') }}</th>
+            <th>{{ gettext('client') }}</th>
+            <th>{{ gettext('config') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Windows 7</td>
+            <td><a
+                href="{{ url_for('dial.static', filename='openvpn-install-2.4.9-I601-Win7.exe') }}">openvpn-install-2.4.6-I602.exe</a>
+            </td>
+            <td><a
+                href="{{ url_for('dial.static', filename='windows-openvpn-client.zip') }}">windows-openvpn-client.zip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Windows 10</td>
+            <td><a
+                href="{{ url_for('dial.static', filename='openvpn-install-2.4.9-I601-Win10.exe') }}">openvpn-install-2.4.6-I602.exe</a>
+            </td>
+            <td><a
+                href="{{ url_for('dial.static', filename='windows-openvpn-client.zip') }}">windows-openvpn-client.zip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Centos</td>
+            <td>sudo yum install openvpn</a></td>
+            <td><a href="{{ url_for('dial.static', filename='linux-openvpn-client.tar.gz') }}">linux-openvpn-client.tar.gz</a></td>
+          </tr>
+          <tr>
+            <td>Debian/Ubuntu</td>
+            <td>sudo apt-get install openvpn</a></td>
+            <td><a href="{{ url_for('dial.static', filename='linux-openvpn-client.tar.gz') }}">linux-openvpn-client.tar.gz</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- end of vpn table -->
+{% endblock content %}
+

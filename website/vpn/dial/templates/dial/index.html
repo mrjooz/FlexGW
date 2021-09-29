@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block title %}VPN Dial{% endblock title%}
+
+{% block trail %}
+        <li><a href="/">{{ gettext('home') }}</a></li>
+        <li>{{ gettext('vpn') }}</li>
+        <li class="current"><a href="{{ url_for('dial.index') }}">{{ gettext('dial') }}</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "dial/sidenav.html" %}
+
+    <!-- start of vpn table -->
+    <div class="large-10 columns">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div data-alert class="alert-box {{ category }}">
+        {{ message }}
+        <a href="#" class="close">&times;</a>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div data-alert class="alert-box info">
+        {{ gettext('notice: Because of keepalive of vpn, status may have a minute delay.') }}
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>{{ gettext('account') }}</th>
+            <th>{{ gettext('real ip') }}</th>
+            <th>{{ gettext('virtual ip') }}</th>
+            <th>{{ gettext('status') }}</th>
+            <th>{{ gettext('bytes received') }}</th>
+            <th>{{ gettext('bytes sent') }}</th>
+            <th>{{ gettext('connection duration') }}</th>
+            <th>{{ gettext('created time') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if accounts %}
+          {% for account in accounts %}
+          <tr>
+            <td><a href="{{ url_for('dial.id_settings', id=account.id) }}">{{ account.name }}</a></td>
+            <td>{{ account.rip }}</td>
+            <td>{{ account.vip }}</td>
+            <td>
+              {% if account.vip %}
+                <span class="success label">{{ gettext('online')}}</span>
+              {% else %}
+                <span class="secondary label">{{ gettext('offline') }}</span>
+              {% endif %}
+            </td>
+            <td>{{ account.br }}</td>
+            <td>{{ account.bs }}</td>
+            <td>{{ account.ct }}</td>
+            <td>{{ account.created_at }}</td>
+          </tr>
+          {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+    <!-- end of vpn table -->
+{% endblock content %}
+

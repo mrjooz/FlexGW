@@ -1,0 +1,14 @@
+    <!-- start of side-nav -->
+    <div id="side-nav" class="large-2 columns">
+      {% set side_bar = [
+        ('snat.index', 'list', gettext('snat'), gettext('list')),
+        ('snat.add', 'plus', gettext('snat'), gettext('add')),
+        ('snat.console', 'wrench', gettext('snat'), gettext('management')),
+      ] -%}
+      <ul class="side-nav">
+        {% for endpoint, icon, caption_first, caption_second in side_bar %}
+          <li{% if request.endpoint == endpoint %} class="active" {% endif %}><a href="{{ url_for(endpoint) }}"><i class="fi-{{ icon }}"> </i>{{ caption_first }} {{ caption_second }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- end of side-nav -->

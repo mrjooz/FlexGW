@@ -1,0 +1,94 @@
+#!/bin/bash
+#########################################################################
+# chkconfig: - 96 48
+# description: this is script can start/stop/restart website
+#########################################################################
+
+
+script_home="/usr/local/flexgw"
+website_prog="/usr/local/flexgw/python/bin/gunicorn"
+website_gunicorn_etc="$script_home/gunicorn.py"
+website_app="website:app"
+
+status()
+{
+    website_pid="$script_home/website.pid"
+    if [ -f $website_pid ]; then
+        website_pid=$(cat $website_pid)
+    else
+        echo $"[STATUS] not found website pid file, seems not running?"
+        return 2
+    fi
+
+    if (kill -0 $website_pid > /dev/null 2>&1); then
+        echo $"[STATUS] website is running"
+        return 0
+    else
+        echo $"[STATUS] website is not running"
+        return 1
+    fi
+}
+
+reload()
+{
+    status
+    if [ $? -eq 0 ]; then
+        kill -s SIGHUP $website_pid
+        if [ $? -eq 0 ]; then
+            echo $"[RELOAD] website reload ok"
+        else
+            echo $"[RELOAD] website reload failed"
+        fi
+    fi
+}
+
+stop()
+{
+    status
+    if [ $? -eq 0 ]; then
+        kill -s SIGTERM $website_pid
+        if [ $? -eq 0 ]; then
+            echo $"[STOP] website stop ok"
+        else
+            echo $"[STOP] website stop failed"
+        fi
+        sleep 2
+        status
+    fi
+}
+
+start()
+{
+    status
+    if [ $? -ne 0 ]; then
+        echo $"[START] starting website..."
+        [ -f /usr/local/flexgw/instance/snat-rules.iptables ] &&
+        iptables-restore --table=nat < /usr/local/flexgw/instance/snat-rules.iptables
+        $website_prog -D -c $website_gunicorn_etc $website_app --pythonpath $script_home
+        sleep 5
+        status
+    fi
+}
+
+case "$1" in
+    start)
+      start
+      ;;
+    stop)
+      stop
+      ;;
+    restart)
+      stop
+      start
+      ;;
+    reload)
+      reload
+      ;;
+    status)
+      status
+      ;;
+    *)
+      echo $"Usage: $0 {start|stop|restart|reload|status}"
+      exit 1
+esac
+exit $?

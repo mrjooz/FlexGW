@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% block title %}VPN Dial Settings{% endblock title%}
+
+{% block trail %}
+        <li><a href="/">{{ gettext('home') }}</a></li>
+        <li>{{ gettext('vpn') }}</li>
+        <li class="current"><a href="{{ url_for('dial.index') }}">{{ gettext('dial') }}</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "dial/sidenav.html" %}
+
+        <!-- start of sts vpn table -->
+    <div class="large-10 columns">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div data-alert class="alert-box {{ category }}">
+        {{ message }}
+        <a href="#" class="close">&times;</a>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div data-alert class="alert-box info">
+        {{ gettext('virtual ip pool: ip pool allocated for vpn client. subnet cidr: cidr for route when client connection, seperated by ",".') }}
+        <br/>
+        <br/>
+        {{ gettext('notes: when you save the vpn config, vpn server will reload and all connections will reconnect.') }}
+      </div>
+      <form method="POST" action="{{ url_for('dial.settings') }}">
+        <div class="row">
+          <div class="large-3 columns">
+            {{ form.proto.label(class="right inline") }}
+          </div>
+          <div class="large-5 columns end">
+            {{ form.proto }}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-3 columns">
+            {{ form.ipool.label(class="right inline") }}
+          </div>
+          <div class="large-5 columns end">
+            {% if form.ipool.errors %}
+            {{ form.ipool(class="error", value=form.ipool.value) }}
+            <small class="error">{{ form.ipool.errors[0] }}</small>
+            {% else %}
+            {{ form.ipool(placeholder="10.8.8.0/24", value=settings.ipool) }}
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-3 columns">
+            {{ form.c2c.label(class="right inline") }}
+          </div>
+          <div class="large-5 columns end">
+            {{ form.c2c }}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-3 columns">
+            {{ form.duplicate.label(class="right inline") }}
+          </div>
+          <div class="large-5 columns end">
+            {{ form.duplicate }}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-3 columns">
+            {{ form.subnet.label(class="right inline") }}
+          </div>
+          <div class="large-5 columns end">
+            {% if form.subnet.errors %}
+            {{ form.subnet(class="error") }}
+            <small class="error">{{ form.subnet.errors[0] }}</small>
+            {% else %}
+            {{ form.subnet(placeholder="10.1.0.0/24, 10.1.1.0/24") }}
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-3 columns large-offset-3">
+            <button class="tiny success">{{ gettext('save') }}</button>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- end of sts vpn table -->
+{% endblock content %}
+

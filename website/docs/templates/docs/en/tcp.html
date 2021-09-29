@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %}Docs{% endblock %}
+
+{% block trail %}
+        <li><a href="/">Home</a></li>
+        <li>Docs</li>
+        <li class="current"><a href="{{ url_for('docs.snat') }}">SNAT</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "docs/en/sidenav.html" %}
+
+    <!-- start of issue table -->
+    <div class="large-10 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h3>TCP Tunnel</h3>
+            <hr />
+            <p>When you want to access a particular port of an ECS in a VPC, you can use TCP tunnel to map the port to FlexGW VM, then access the ECS port through FlexGW EIP.</p>
+            <h5>At first, add a TCP tunnel entry</h5>
+            <hr />
+            <p>Go to the "New TCP tunnel" page:</p>
+            <img src="{{ url_for('docs.static', filename='img/en/tcp_01.png') }}">
+            <ul>
+              <li>Local port: is the FlexGW port for forwarding. In this case: 50000</li>
+              <li>Target IP: is the private IP of the ECS which want to access internet in VPC.. In this case: 10.0.0.1</li>
+              <li>Destination port: the port of the target ECS. In this case: 3306</li>
+            </ul>
+
+            <h5>Second, check the TCP tunnel list</h5>
+            <hr />
+            <p>When the new TCP tunnel entry added, it will automatically jump to the "TCP tunneling list" page, you can see:</p>
+            <img src="{{ url_for('docs.static', filename='img/en/tcp_02.png') }}">
+            <ul>
+              <li>Local port: is the FlexGW port for forwarding. In this case: 50000</li>
+              <li>Target IP: is the private IP of the ECS which want to access internet in VPC.. In this case: 10.0.0.1</li>
+              <li>Destination port: the port of the target ECS. In this case: 3306</li>
+              <li>Close: Click the 'Close' button to close the TCP tunnel, and take effect immediately.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of issue table -->
+{% endblock content %}

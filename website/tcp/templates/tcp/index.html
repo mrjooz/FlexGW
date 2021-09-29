@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block title %}{{ gettext('tcp tunnels list') }}{% endblock %}
+
+{% block trail %}
+        <li><a href="/">{{ gettext('home') }}</a></li>
+        <li><a href="{{ url_for('tcp.index') }}">{{ gettext('tcp') }}</a></li>
+        <li class="current"><a href="{{ url_for('tcp.index') }}">{{ gettext('tcp tunnels list') }}</a></li>
+{% endblock trail %}
+
+{% block content %}
+    <!-- start of side-nav -->
+    <div id="side-nav" class="large-2 columns">
+      <ul class="side-nav">
+        <li class="active"><a href="{{ url_for('tcp.index') }}"><i class="fi-list"> </i>{{ gettext('tcp tunnels list') }}</a></li>
+        <li><a href="{{ url_for('tcp.add') }}"><i class="fi-plus"> </i>{{ gettext('create tcp tunnel') }}</a></li>
+        <li><a href="{{ url_for('tcp.console') }}"><i class="fi-wrench"> </i>{{ gettext('manage tcp tunnel') }}</a></li>
+      </ul>
+    </div>
+    <!-- end of side-nav -->
+
+    <!-- start of tcp proxy connection table -->
+    <div id="tcp-list" class="large-10 columns">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div data-alert class="alert-box {{ category }}">
+        {{ message }}
+        <a href="#" class="close">&times;</a>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div class="row">
+        <div class="large-12 columns">
+          <table>
+            <thead>
+              <tr>
+                <th>{{ gettext('local port') }}</th>
+                <th>{{ gettext('destination ip') }}</th>
+                <th>{{ gettext('destination port') }}</th>
+                <th>{{ gettext('operations') }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if connections %}
+              {% for connection in connections %}
+              <tr>
+                <td>{{ connection.local_port }}</td>
+                <td>{{ connection.dest_ip }}</td>
+                <td>{{ connection.dest_port }}</td>
+                <td>
+                  <form method="POST" action="{{ url_for('tcp.delete') }}">
+                    <input type="hidden" name="connection_id" value="{{ connection.id }}" />
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                    <button class="button bitty alert tcp-del">{{ gettext('close') }}</button>
+                  </form>
+                </td>
+              </tr>
+              {% endfor %}
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- end of snat table -->
+{% endblock content %}

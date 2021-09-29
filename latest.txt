@@ -1,0 +1,1 @@
+https://github.com/mrjooz/FlexGW/releases/download/v2.0.0/flexgw-2.0.0-1.el7.x86_64.rpm

@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block title %}{{ gettext('snat') }} {{ gettext('add') }}{% endblock %}
+
+{% block trail %}
+        <li><a href="/">{{ gettext('home')}}</a></li>
+        <li><a href="{{ url_for('snat.index') }}">{{ gettext('snat') }}</a></li>
+        <li class="current"><a href="{{ url_for('snat.add') }}">{{ gettext('snat') }} {{ gettext('add') }}</a></li>
+{% endblock trail %}
+
+{% block content %}
+    <!-- start of side-nav -->
+    <div id="side-nav" class="large-2 columns">
+      <ul class="side-nav">
+        <li><a href="{{ url_for('snat.index') }}"><i class="fi-list"> </i>{{ gettext('snat') }} {{ gettext('list') }}</a></li>
+        <li class="active"><a href="{{ url_for('snat.add') }}"><i class="fi-plus"> </i>{{ gettext('snat') }} {{ gettext('add') }}</a></li>
+        <li><a href="{{ url_for('snat.console') }}"><i class="fi-wrench"> </i>{{ gettext('snat') }} {{ gettext('management') }}</a></li>
+      </ul>
+    </div>
+    <!-- end of side-nav -->
+
+    <!-- start of snat add form -->
+    <div class="large-10 columns end">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div data-alert class="alert-box {{ category }}">
+        {{ message }}
+        <a href="#" class="close">&times;</a>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div data-alert class="alert-box info">
+        {{ gettext('notice: "to source ip" should be local private ip.') }}
+      </div>
+      <form method='POST' action='/snat/add'>
+        <div class="row">
+          <div class="large-3 columns">
+            {{ form.source.label(class="right inline") }}
+          </div>
+          <div class="large-5 columns">
+            {% if form.source.errors %}
+            {{ form.source(class="error", value=form.source.value) }}
+            <small class="error">{{ form.source.errors[0] }}</small>
+            {% else %}
+            {{ form.source(placeholder="10.8.8.0/24") }}
+            {% endif %}
+          </div>
+          <div class="large-4 columns end">
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-3 columns">
+            {{ form.gateway.label(class="right inline") }}
+          </div>
+          <div class="large-5 columns">
+            {% if form.gateway.errors %}
+            {{ form.gateway(class="error", value=form.source.value) }}
+            <small class="error">{{ form.gateway.errors[0] }}</small>
+            {% else %}
+            {{ form.gateway(placeholder="192.168.0.1") }}
+            {% endif %}
+          </div>
+          <div class="large-4 columns end">
+          </div>
+        </div>
+        <div class="row">
+            <div class="large-3 columns large-offset-3">
+              <button class="tiny success">{{ gettext('add') }}</button>
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            </div>
+          </div>
+      </form>
+    </div>
+    <!-- start of snat add form -->
+{% endblock content %}
+

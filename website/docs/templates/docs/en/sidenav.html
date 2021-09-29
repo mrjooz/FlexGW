@@ -1,0 +1,20 @@
+    <!-- start of side-nav -->
+    <div id="side-nav" class="large-2 columns">
+      {% set side_bar = [
+        ('docs.index', 'list', 'Introduction'),
+        ('docs.ipsec', 'list', 'IPSec VPN'),
+        ('docs.dial', 'list', 'Dial-up VPN'),
+        ('docs.snat', 'list', 'SNAT'),
+        ('docs.tcp', 'list', 'TCP Tunnel'),
+        ('docs.certificate', 'list', 'VPN certification'),
+        ('docs.debug', 'list', 'FAQ'),
+        ('docs.update', 'list', 'Upgrade'),
+        ('docs.changelog', 'list', 'ChangeLog')
+      ] -%}
+      <ul class="side-nav">
+        {% for endpoint, icon, caption in side_bar %}
+          <li{% if request.endpoint == endpoint %} class="active" {% endif %}><a href="{{ url_for(endpoint) }}"><i class="fi-{{ icon }}"> </i>{{ caption }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- end of side-nav -->

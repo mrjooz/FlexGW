@@ -1,0 +1,318 @@
+/* overrides */
+
+
+/* -----------------------------------------
+   For a, body, header, footer
+----------------------------------------- */
+body,
+header.contain-to-grid {
+  background: white url(../img/light-grid.png) repeat;
+}
+
+header.contain-to-grid {
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-decoration: none;
+}
+
+footer.row {
+  margin-top: 1.25rem;
+  padding: 1rem 0;
+  border-top: 1px solid #AAA;
+}
+
+footer > * a {
+  font-size: 60%;
+}
+
+
+/* -----------------------------------------
+   For nav
+----------------------------------------- */
+#nav .top-bar,
+#nav .top-bar-section ul,
+#nav .top-bar-section li:not(.has-form) a:not(.button),
+#nav .top-bar-section ul li > a,
+#nav .top-bar.expanded .title-area {
+  background: #379F7A url(../img/bg.png) repeat;
+  color: white;
+  text-decoration: none;
+}
+
+#nav .top-bar-section li:not(.has-form) a:not(.button):hover,
+#nav .top-bar-section .dropdown li:not(.has-form):hover > a:not(.button) {
+  background: #11766D;
+}
+
+#nav .top-bar-section .dropdown li:not(.has-form) a:not(.button) {
+  color: white;
+  background: #61ADA0;
+}
+
+#nav .top-bar-section li.active:not(.has-form) a:not(.button) {
+  background: #11766D;
+}
+
+#trail {
+  margin-top: 1.25rem;
+}
+
+.breadcrumbs {
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.breadcrumbs > *:before {
+  content: "›";
+}
+
+.breadcrumbs > * a {
+  color: #00A8C6;
+}
+
+.side-nav {
+  padding: 0;
+}
+
+.side-nav li.active > a:first-child:not(.button) {
+  color: #FFF;
+  background: #379F7A;
+}
+
+.side-nav li a,
+.side-nav li a:not(.button) {
+  color: #00A8C6;
+  background: #efefef;
+}
+
+.side-nav li a:not(.button):hover,
+.side-nav li a:not(.button):focus {
+  color: #40C0CB;
+}
+
+ul.square, ol {
+  font-size: 0.8125rem;
+}
+
+
+/* -----------------------------------------
+   For content, table
+----------------------------------------- */
+#content {
+  min-height: 400px;
+}
+table.columns {
+  border-spacing: 0;
+  padding: 0;
+}
+
+td > .button,
+td form > .button {
+  margin: 0;
+}
+
+td form {
+  margin: 0;
+}
+
+td a {
+  color: #00A8C6;
+}
+
+.button {
+  background: #00A8C6;
+}
+
+.button.bitty {
+  padding: 5px;
+  font-size: 0.6875rem;
+}
+
+.button.alert {
+  background: #F1396D;
+}
+
+.form-label {
+  margin-top: 0.5625rem;
+}
+
+.switch {
+  padding: 0.5625rem 0;
+}
+
+.switch .has-tip {
+  border-bottom: none;
+}
+
+.pricing-table .title {
+  background: whitesmoke;
+  color: #222;
+}
+
+.pricing-table .description {
+  min-height: 80px;
+  color: #424242;
+  border-bottom: dashed 1px #DDD;
+}
+
+.pricing-table .cta-button .alert {
+  background: #F35F55;
+}
+
+.alert-box.info {
+  background-color: #4DBCE9;
+  border-color: #4DBCE9;
+  color: #FFF;
+}
+
+.alert-box.alert {
+  background-color: #FF4E50;
+  border-color: #FF4E50;
+  color: #FFF;
+}
+
+.alert-box.success {
+  background-color: #00C176;
+  border-color: #00C176;
+  color: #FFF;
+}
+
+.alert-box.loader {
+  background-color: transparent;
+  border-color: transparent;
+  text-align: center;
+}
+
+a.box-link {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+#showpass {
+  background: #E7E7E7;
+  color: #000;
+}
+
+/* -----------------------------------------
+   For login
+----------------------------------------- */
+#login {
+  margin-top: 5rem;
+  padding: 0;
+  background: #efefef;
+  box-shadow: 1px 1px 10px #c7c7c7;
+  -webkit-box-shadow: 1px 1px 10px #c7c7c7;
+  -moz-box-shadow: 1px 1px 10px #c7c7c7;
+}
+
+#login .header {
+  font-size: 2rem;
+  padding: 0.5625rem;
+  background: #379F7A;
+  text-align: center;
+}
+
+#login .header h4 {
+  color: #FFF;
+}
+
+#login form {
+  padding: 1rem;
+}
+
+
+/* -----------------------------------------
+   For docs
+----------------------------------------- */
+.panel img {
+  margin-bottom: 10px;
+}
+
+#bottom-ads {
+  width: 100%;
+  height: 90px;
+}
+
+#top-ads {
+  width: 100%;
+  height:60px;
+  float:right;
+}
+
+.news-carousel .img-container {
+  text-align: left;
+  color: #fff;
+  padding: 10px;
+  /*padding-right: 250px;*/
+  font-size: 16px;
+  line-height: 38px;
+  width: 100%;
+  height: 90px;
+}
+
+.news-carousel .img-container > div:nth-child(1) {
+  font-size: 30px;
+}
+.news-carousel .img-container > div:nth-child(3) {
+  text-align: center;
+  line-height: 32px;
+  border: 1px solid #fff;
+  width: 200px;
+  /*margin-top: 10px;*/
+  cursor: pointer;
+}
+
+.news-carousel .carousel-indicators {
+  top: 200px;
+}
+
+.news-carousel .left.carousel-control {
+  display: none;
+}
+
+.news-carousel .right.carousel-control {
+  display: none;
+}
+
+.top-carousel .img-container {
+  text-align: left;
+  color: #fff;
+  padding: 10px;
+  /*padding-right: 250px;*/
+  font-size: 10px;
+  /*line-height: 38px;*/
+  width: 100%;
+  height: 62px;
+  overflow: hidden;
+}
+
+.top-carousel .img-container > div:nth-child(1) {
+  font-size: 14px;
+  overflow: hidden;
+}
+.top-carousel .img-container > div:nth-child(3) {
+  text-align: center;
+  border: 1px solid #fff;
+  width: 200px;
+  overflow:hidden;
+  /*margin-top: 10px;*/
+  cursor: pointer;
+}
+
+.top-carousel .carousel-indicators {
+  top: 200px;
+}
+
+.top-carousel .left.carousel-control {
+  display: none;
+}
+
+.top-carousel .right.carousel-control {
+  display: none;
+}
+
+.orbit-progress {
+  display: none;
+}

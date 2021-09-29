@@ -1,0 +1,1121 @@
+# Translations template for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-07-25 05:11-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.1.1\n"
+
+#: website/account/forms.py:21 website/account/templates/account/login.html:29
+msgid "username"
+msgstr ""
+
+#: website/account/forms.py:22
+msgid "this is required."
+msgstr ""
+
+#: website/account/forms.py:23
+msgid "account maximal length is 20."
+msgstr ""
+
+#: website/account/forms.py:26 website/account/templates/account/login.html:42
+#: website/vpn/dial/forms.py:26
+msgid "password"
+msgstr ""
+
+#: website/account/forms.py:31
+msgid "invalid username/password"
+msgstr ""
+
+#: website/account/forms.py:35 website/account/templates/account/mfa.html:29
+#: website/account/templates/account/settings.html:57
+#: website/account/templates/account/settings.html:83
+msgid "otp code"
+msgstr ""
+
+#: website/account/forms.py:36 website/gre/forms.py:22 website/gre/forms.py:25
+#: website/gre/forms.py:28 website/tcp/forms.py:23 website/tcp/forms.py:26
+#: website/tcp/forms.py:29 website/vpn/dial/forms.py:23
+#: website/vpn/dial/forms.py:27 website/vpn/dial/forms.py:37
+#: website/vpn/dial/forms.py:40 website/vpn/sts/forms.py:23
+#: website/vpn/sts/forms.py:87 website/vpn/sts/forms.py:91
+#: website/vpn/sts/forms.py:94 website/vpn/sts/forms.py:98
+#: website/vpn/sts/forms.py:101 website/vpn/sts/forms.py:105
+msgid "this is required"
+msgstr ""
+
+#: website/account/forms.py:37
+msgid "Length must be 6."
+msgstr ""
+
+#: website/account/forms.py:43
+msgid "language"
+msgstr ""
+
+#: website/account/templates/account/login.html:17
+#: website/account/templates/account/login.html:48
+msgid "login"
+msgstr ""
+
+#: website/account/templates/account/mfa.html:17
+msgid "mfa two step verification"
+msgstr ""
+
+#: website/account/templates/account/mfa.html:35
+msgid "verify"
+msgstr ""
+
+#: website/account/templates/account/settings.html:21
+msgid "confirm"
+msgstr ""
+
+#: website/account/templates/account/settings.html:35
+msgid "enabled"
+msgstr ""
+
+#: website/account/templates/account/settings.html:37
+msgid "disabled"
+msgstr ""
+
+#: website/account/templates/account/settings.html:63
+msgid "disable"
+msgstr ""
+
+#: website/account/templates/account/settings.html:71
+msgid ""
+"using otp tools (e.g. google authenticator) scan the qr code, and fill to"
+" qtp code below to enable two step verification."
+msgstr ""
+
+#: website/account/templates/account/settings.html:89
+msgid "enable"
+msgstr ""
+
+#: website/gre/forms.py:21 website/gre/templates/gre/index.html:30
+msgid "local router ip"
+msgstr ""
+
+#: website/gre/forms.py:24 website/gre/templates/gre/index.html:31
+msgid "remote router ip"
+msgstr ""
+
+#: website/gre/forms.py:27 website/gre/templates/gre/index.html:32
+msgid "subnet"
+msgstr ""
+
+#: website/gre/forms.py:31 website/tcp/forms.py:31
+#: website/vpn/sts/templates/sts/sidenav.html:5
+msgid "create tunnel"
+msgstr ""
+
+#: website/gre/forms.py:37 website/snat/forms.py:52 website/tcp/forms.py:38
+msgid "ensure"
+msgstr ""
+
+#: website/gre/forms.py:38 website/snat/forms.py:53 website/tcp/forms.py:39
+msgid "reset"
+msgstr ""
+
+#: website/gre/views.py:45
+msgid "there is not gre tunnel."
+msgstr ""
+
+#: website/gre/views.py:75
+msgid "all tunnels started!"
+msgstr ""
+
+#: website/gre/views.py:78
+msgid "all tunnels reseted!"
+msgstr ""
+
+#: website/gre/templates/gre/add.html:2 website/gre/templates/gre/add.html:7
+#: website/gre/templates/gre/sidenav.html:5
+msgid "add gre tunnel"
+msgstr ""
+
+#: website/gre/templates/gre/add.html:5
+#: website/gre/templates/gre/console.html:5
+#: website/gre/templates/gre/index.html:5 website/snat/templates/add.html:5
+#: website/snat/templates/console.html:5 website/snat/templates/index.html:5
+#: website/tcp/templates/tcp/add.html:5
+#: website/tcp/templates/tcp/console.html:5
+#: website/tcp/templates/tcp/index.html:5
+#: website/vpn/dial/templates/dial/add.html:5
+#: website/vpn/dial/templates/dial/console.html:5
+#: website/vpn/dial/templates/dial/download.html:5
+#: website/vpn/dial/templates/dial/index.html:5
+#: website/vpn/dial/templates/dial/settings.html:5
+#: website/vpn/dial/templates/dial/view.html:5
+#: website/vpn/sts/templates/sts/add.html:5
+#: website/vpn/sts/templates/sts/console.html:5
+#: website/vpn/sts/templates/sts/flow.html:9
+#: website/vpn/sts/templates/sts/index.html:5
+#: website/vpn/sts/templates/sts/view.html:5
+msgid "home"
+msgstr ""
+
+#: website/gre/templates/gre/add.html:6
+#: website/gre/templates/gre/console.html:6
+#: website/gre/templates/gre/index.html:6
+msgid "gre"
+msgstr ""
+
+#: website/gre/templates/gre/add.html:39
+msgid "Using private ip in VPC."
+msgstr ""
+
+#: website/gre/templates/gre/add.html:56
+msgid "Public IP for the other side."
+msgstr ""
+
+#: website/gre/templates/gre/add.html:72
+msgid "Subnet of the other side."
+msgstr ""
+
+#: website/gre/templates/gre/add.html:78
+msgid "create gre tunnel"
+msgstr ""
+
+#: website/gre/templates/gre/console.html:7
+msgid "gre console"
+msgstr ""
+
+#: website/gre/templates/gre/console.html:29
+msgid "ensure all tunnels"
+msgstr ""
+
+#: website/gre/templates/gre/console.html:31
+msgid "ensure all gre tunnels, will not disconnect exist tunnels."
+msgstr ""
+
+#: website/gre/templates/gre/console.html:40
+msgid "reset all tunnels"
+msgstr ""
+
+#: website/gre/templates/gre/console.html:42
+msgid "reset all tunnels, disconnect all tunnels and reconnect."
+msgstr ""
+
+#: website/gre/templates/gre/index.html:2
+#: website/gre/templates/gre/index.html:7
+#: website/gre/templates/gre/sidenav.html:4
+msgid "gre tunnels list"
+msgstr ""
+
+#: website/gre/templates/gre/index.html:33 website/snat/templates/index.html:39
+#: website/tcp/templates/tcp/index.html:41
+#: website/vpn/sts/templates/sts/index.html:36
+msgid "operations"
+msgstr ""
+
+#: website/gre/templates/gre/index.html:47
+#: website/tcp/templates/tcp/index.html:55 website/vpn/dial/forms.py:53
+msgid "close"
+msgstr ""
+
+#: website/gre/templates/gre/sidenav.html:6
+msgid "gre tunnel management"
+msgstr ""
+
+#: website/snat/services.py:41 website/snat/services.py:109
+#: website/tcp/services.py:66
+msgid "iptables crashed, please contact your system admin."
+msgstr ""
+
+#: website/snat/services.py:47 website/tcp/services.py:72
+#, python-format
+msgid "get rules failed: %(err)s"
+msgstr ""
+
+#: website/snat/services.py:96
+#, python-format
+msgid "the rule already exist: %(source)s ==> %(gateway)s"
+msgstr ""
+
+#: website/snat/services.py:117
+#, python-format
+msgid "set rule failed: %(err)s"
+msgstr ""
+
+#: website/snat/views.py:35
+msgid "there is no snat ruls yet."
+msgstr ""
+
+#: website/snat/views.py:45
+#, python-format
+msgid "snat rule is added: %(source)s ==> %(gateway)s."
+msgstr ""
+
+#: website/snat/views.py:57
+#, python-format
+msgid "snat rule is gettextd: %(source)s ==> %(gateway)s."
+msgstr ""
+
+#: website/snat/views.py:70 website/tcp/views.py:74
+msgid "all snat started!"
+msgstr ""
+
+#: website/snat/views.py:73 website/tcp/views.py:77
+msgid "all snat reseted!"
+msgstr ""
+
+#: website/snat/templates/add.html:2 website/snat/templates/add.html:6
+#: website/snat/templates/add.html:7 website/snat/templates/add.html:14
+#: website/snat/templates/add.html:15 website/snat/templates/add.html:16
+#: website/snat/templates/console.html:6 website/snat/templates/index.html:2
+#: website/snat/templates/index.html:6 website/snat/templates/index.html:13
+#: website/snat/templates/index.html:14 website/snat/templates/index.html:15
+#: website/snat/templates/sidenav.html:4 website/snat/templates/sidenav.html:5
+#: website/snat/templates/sidenav.html:6 website/templates/layout.html:61
+#: website/templates/settings.html:8
+msgid "snat"
+msgstr ""
+
+#: website/snat/templates/add.html:2 website/snat/templates/add.html:7
+#: website/snat/templates/add.html:15 website/snat/templates/add.html:69
+#: website/snat/templates/index.html:14 website/snat/templates/sidenav.html:5
+msgid "add"
+msgstr ""
+
+#: website/snat/templates/add.html:14 website/snat/templates/index.html:2
+#: website/snat/templates/index.html:13 website/snat/templates/sidenav.html:4
+msgid "list"
+msgstr ""
+
+#: website/snat/templates/add.html:16 website/snat/templates/index.html:15
+#: website/snat/templates/sidenav.html:6
+msgid "management"
+msgstr ""
+
+#: website/snat/templates/add.html:34
+msgid "notice: \"to source ip\" should be local private ip."
+msgstr ""
+
+#: website/snat/templates/console.html:7
+msgid "console"
+msgstr ""
+
+#: website/snat/templates/console.html:29
+#: website/tcp/templates/tcp/console.html:29
+msgid "ensure iptables"
+msgstr ""
+
+#: website/snat/templates/console.html:31
+#: website/tcp/templates/tcp/console.html:31
+msgid "ensure iptables from database"
+msgstr ""
+
+#: website/snat/templates/console.html:40
+#: website/tcp/templates/tcp/console.html:40
+msgid "reset iptables"
+msgstr ""
+
+#: website/snat/templates/console.html:42
+msgid "reset database from database"
+msgstr ""
+
+#: website/snat/templates/index.html:37
+msgid "need convert cidr"
+msgstr ""
+
+#: website/snat/templates/index.html:38
+msgid "to source"
+msgstr ""
+
+#: website/snat/templates/index.html:53 website/vpn/dial/forms.py:32
+#: website/vpn/sts/forms.py:109
+msgid "delete"
+msgstr ""
+
+#: website/tcp/forms.py:22 website/tcp/templates/tcp/index.html:38
+msgid "local port"
+msgstr ""
+
+#: website/tcp/forms.py:25 website/tcp/templates/tcp/index.html:39
+msgid "destination ip"
+msgstr ""
+
+#: website/tcp/forms.py:28 website/tcp/templates/tcp/index.html:40
+msgid "destination port"
+msgstr ""
+
+#: website/tcp/views.py:44
+msgid "there is no tcp tunnel yet."
+msgstr ""
+
+#: website/tcp/templates/tcp/add.html:6
+#: website/tcp/templates/tcp/console.html:6
+#: website/tcp/templates/tcp/index.html:6
+msgid "tcp"
+msgstr ""
+
+#: website/tcp/templates/tcp/add.html:7
+msgid "new tcp tunnel"
+msgstr ""
+
+#: website/tcp/templates/tcp/add.html:72
+#: website/tcp/templates/tcp/index.html:15
+#: website/tcp/templates/tcp/sidenav.html:5
+msgid "create tcp tunnel"
+msgstr ""
+
+#: website/tcp/templates/tcp/console.html:7
+#: website/tcp/templates/tcp/index.html:16
+#: website/tcp/templates/tcp/sidenav.html:6
+msgid "manage tcp tunnel"
+msgstr ""
+
+#: website/tcp/templates/tcp/console.html:42
+msgid "reset iptables from database"
+msgstr ""
+
+#: website/tcp/templates/tcp/index.html:2
+#: website/tcp/templates/tcp/index.html:7
+#: website/tcp/templates/tcp/index.html:14
+#: website/tcp/templates/tcp/sidenav.html:4
+msgid "tcp tunnels list"
+msgstr ""
+
+#: website/templates/layout.html:8
+msgid "gateway"
+msgstr ""
+
+#: website/templates/layout.html:25
+msgid "flex gateway"
+msgstr ""
+
+#: website/templates/layout.html:54
+msgid "menu"
+msgstr ""
+
+#: website/templates/layout.html:59
+msgid "ipsec vpn"
+msgstr ""
+
+#: website/templates/layout.html:60
+msgid "dial vpn"
+msgstr ""
+
+#: website/templates/layout.html:62
+msgid "tcp tunnel"
+msgstr ""
+
+#: website/templates/layout.html:63
+msgid "gre tunnel"
+msgstr ""
+
+#: website/templates/layout.html:66
+msgid "docs"
+msgstr ""
+
+#: website/templates/layout.html:67
+msgid "check for update"
+msgstr ""
+
+#: website/templates/layout.html:68 website/templates/settings.html:9
+#: website/vpn/dial/templates/dial/sidenav.html:6
+msgid "settings"
+msgstr ""
+
+#: website/templates/layout.html:69
+msgid "logout"
+msgstr ""
+
+#: website/templates/settings.html:7 website/vpn/dial/templates/dial/add.html:6
+#: website/vpn/dial/templates/dial/download.html:6
+#: website/vpn/dial/templates/dial/index.html:6
+#: website/vpn/dial/templates/dial/settings.html:6
+#: website/vpn/dial/templates/dial/view.html:6
+#: website/vpn/sts/templates/sts/add.html:6
+#: website/vpn/sts/templates/sts/console.html:6
+#: website/vpn/sts/templates/sts/flow.html:10
+#: website/vpn/sts/templates/sts/index.html:6
+#: website/vpn/sts/templates/sts/view.html:6
+msgid "vpn"
+msgstr ""
+
+#: website/templates/settings.html:19
+msgid "vpn client ip pool"
+msgstr ""
+
+#: website/templates/settings.html:29
+msgid "snat gateway"
+msgstr ""
+
+#: website/templates/settings.html:39 website/vpn/dial/forms.py:31
+#: website/vpn/dial/templates/dial/add.html:59
+#: website/vpn/dial/templates/dial/settings.html:89
+#: website/vpn/sts/forms.py:108 website/vpn/sts/templates/sts/add.html:249
+msgid "save"
+msgstr ""
+
+#: website/utils/validators.py:16
+msgid "OTP Code incorrect."
+msgstr ""
+
+#: website/utils/validators.py:34
+msgid "invalid ip."
+msgstr ""
+
+#: website/utils/validators.py:64
+msgid "invalid subnet."
+msgstr ""
+
+#: website/utils/validators.py:73
+msgid "invalid ip or subnet."
+msgstr ""
+
+#: website/utils/validators.py:94
+msgid "port in use."
+msgstr ""
+
+#: website/utils/validators.py:108
+msgid "invalid public ip"
+msgstr ""
+
+#: website/utils/validators.py:129 website/vpn/dial/forms.py:38
+msgid "invalid ip pool"
+msgstr ""
+
+#: website/vpn/dial/forms.py:22 website/vpn/dial/templates/dial/index.html:31
+msgid "account"
+msgstr ""
+
+#: website/vpn/dial/forms.py:24 website/vpn/sts/forms.py:24
+msgid "account maximal length is 20"
+msgstr ""
+
+#: website/vpn/dial/forms.py:25 website/vpn/sts/forms.py:25
+msgid "only contains number, alpha, underline."
+msgstr ""
+
+#: website/vpn/dial/forms.py:28
+msgid "password maximal length is 20"
+msgstr ""
+
+#: website/vpn/dial/forms.py:36
+msgid "ip pool"
+msgstr ""
+
+#: website/vpn/dial/forms.py:39
+msgid "subnets"
+msgstr ""
+
+#: website/vpn/dial/forms.py:41
+msgid "invalid subnets"
+msgstr ""
+
+#: website/vpn/dial/forms.py:43 website/vpn/dial/forms.py:45
+msgid "no"
+msgstr ""
+
+#: website/vpn/dial/forms.py:43 website/vpn/dial/forms.py:45
+msgid "yes"
+msgstr ""
+
+#: website/vpn/dial/forms.py:44
+msgid "allow multi login using one account"
+msgstr ""
+
+#: website/vpn/dial/forms.py:46
+msgid "protocol"
+msgstr ""
+
+#: website/vpn/dial/forms.py:54 website/vpn/sts/forms.py:116
+msgid "start"
+msgstr ""
+
+#: website/vpn/dial/forms.py:55 website/vpn/sts/forms.py:117
+msgid "install&reload"
+msgstr ""
+
+#: website/vpn/dial/services.py:133
+msgid "OpenVPN is crashed, please contact your system admin."
+msgstr ""
+
+#: website/vpn/dial/services.py:151
+msgid "vpn service reload failed!"
+msgstr ""
+
+#: website/vpn/dial/services.py:156
+msgid "client config packaging failed!"
+msgstr ""
+
+#: website/vpn/dial/services.py:162
+msgid "service already started!"
+msgstr ""
+
+#: website/vpn/dial/services.py:165
+msgid "vpn service start failed!"
+msgstr ""
+
+#: website/vpn/dial/services.py:171
+msgid "service already stopped."
+msgstr ""
+
+#: website/vpn/dial/services.py:174
+msgid "vpn service stop failed"
+msgstr ""
+
+#: website/vpn/dial/services.py:181
+msgid "vpn config file set failed, please retry!"
+msgstr ""
+
+#: website/vpn/dial/services.py:186
+msgid "vpn config file set successed, vpn service is not running."
+msgstr ""
+
+#: website/vpn/dial/views.py:37 website/vpn/sts/views.py:37
+msgid "there is no vpn config yet."
+msgstr ""
+
+#: website/vpn/dial/views.py:46
+msgid "please config vpn before add account."
+msgstr ""
+
+#: website/vpn/dial/views.py:52
+msgid "add vpn account successed."
+msgstr ""
+
+#: website/vpn/dial/views.py:56
+#, python-format
+msgid "the account is exist: %(account)s"
+msgstr ""
+
+#: website/vpn/dial/views.py:68
+msgid "vpn config update successed!"
+msgstr ""
+
+#: website/vpn/dial/views.py:86
+#, python-format
+msgid "account deleted: %(account)s"
+msgstr ""
+
+#: website/vpn/dial/views.py:91
+msgid "update account successed"
+msgstr ""
+
+#: website/vpn/dial/views.py:103
+msgid "vpn service stopped!"
+msgstr ""
+
+#: website/vpn/dial/views.py:105
+msgid "vpn service started!"
+msgstr ""
+
+#: website/vpn/dial/views.py:107
+msgid "vpn service reloaded!"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/add.html:2
+msgid "create vpn dial"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/add.html:7
+#: website/vpn/dial/templates/dial/download.html:7
+#: website/vpn/dial/templates/dial/index.html:7
+#: website/vpn/dial/templates/dial/settings.html:7
+#: website/vpn/dial/templates/dial/view.html:7
+msgid "dial"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/add.html:26
+msgid "notice: \"account\" only contains number, alpha, underline."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/console.html:7
+#: website/vpn/sts/templates/sts/console.html:7
+msgid "vpn console"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/console.html:27
+msgid "service running."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/console.html:29
+msgid "service is not running."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/console.html:36
+msgid "start vpn service"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/console.html:37
+msgid "start vpn service. It will not interupt the vpn service which is running."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/console.html:49
+msgid "stop vpn service"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/console.html:50
+msgid "stop vpn service. when service is down, all tunnels will be closed."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/console.html:62
+#: website/vpn/sts/templates/sts/console.html:65
+msgid "config install & reload"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/console.html:63
+#: website/vpn/sts/templates/sts/console.html:66
+msgid ""
+"install new vpn config and make it effect. recommend using this after "
+"edit vpn config."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/download.html:26
+msgid ""
+"notice: after download config file, replace the \"EIP\" with public ip of"
+" your server."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/download.html:31
+msgid "description"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/download.html:32
+msgid "client"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/download.html:33
+msgid "config"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:26
+msgid "notice: Because of keepalive of vpn, status may have a minute delay."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:32
+msgid "real ip"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:33
+msgid "virtual ip"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:34
+#: website/vpn/sts/templates/sts/flow.html:20
+#: website/vpn/sts/templates/sts/index.html:34
+msgid "status"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:35
+msgid "bytes received"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:36
+msgid "bytes sent"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:37
+msgid "connection duration"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:38
+msgid "created time"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:50
+#: website/vpn/sts/templates/sts/flow.html:22
+msgid "online"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/index.html:52
+#: website/vpn/sts/templates/sts/flow.html:24
+msgid "offline"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/settings.html:26
+msgid ""
+"virtual ip pool: ip pool allocated for vpn client. subnet cidr: cidr for "
+"route when client connection, seperated by \",\"."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/settings.html:29
+msgid ""
+"notes: when you save the vpn config, vpn server will reload and all "
+"connections will reconnect."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/sidenav.html:4
+msgid "accounts list"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/sidenav.html:5
+msgid "create account"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/sidenav.html:7
+msgid "vpn service management"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/sidenav.html:8
+msgid "download client"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/view.html:2
+msgid "VPN Dial Account Modify"
+msgstr ""
+
+#: website/vpn/dial/templates/dial/view.html:26
+msgid ""
+"notice: after delete account, vpn service will reload to ensure "
+"connection using the account is disconnected."
+msgstr ""
+
+#: website/vpn/dial/templates/dial/view.html:57
+msgid "show password"
+msgstr ""
+
+#: website/vpn/sts/forms.py:19 website/vpn/sts/templates/sts/index.html:29
+msgid "ike version"
+msgstr ""
+
+#: website/vpn/sts/forms.py:22 website/vpn/sts/templates/sts/flow.html:19
+#: website/vpn/sts/templates/sts/index.html:28
+msgid "tunnel id"
+msgstr ""
+
+#: website/vpn/sts/forms.py:27
+msgid "auto start"
+msgstr ""
+
+#: website/vpn/sts/forms.py:28 website/vpn/sts/templates/sts/index.html:47
+msgid "manual"
+msgstr ""
+
+#: website/vpn/sts/forms.py:28 website/vpn/sts/templates/sts/index.html:49
+msgid "auto"
+msgstr ""
+
+#: website/vpn/sts/forms.py:30
+msgid "negotiation mode"
+msgstr ""
+
+#: website/vpn/sts/forms.py:31
+msgid "active"
+msgstr ""
+
+#: website/vpn/sts/forms.py:31
+msgid "aggressive"
+msgstr ""
+
+#: website/vpn/sts/forms.py:33
+msgid "dpd action"
+msgstr ""
+
+#: website/vpn/sts/forms.py:34
+msgid "none"
+msgstr ""
+
+#: website/vpn/sts/forms.py:34
+msgid "clear"
+msgstr ""
+
+#: website/vpn/sts/forms.py:35
+msgid "hold"
+msgstr ""
+
+#: website/vpn/sts/forms.py:35
+msgid "restart"
+msgstr ""
+
+#: website/vpn/sts/forms.py:37
+msgid "ike encryption algorithm"
+msgstr ""
+
+#: website/vpn/sts/forms.py:41
+msgid "ike integrity algorithm "
+msgstr ""
+
+#: website/vpn/sts/forms.py:47
+msgid "ike dh algorithm"
+msgstr ""
+
+#: website/vpn/sts/forms.py:59
+msgid "esp encryption algorithm"
+msgstr ""
+
+#: website/vpn/sts/forms.py:68
+msgid "esp integrity algorithm"
+msgstr ""
+
+#: website/vpn/sts/forms.py:73
+msgid "esp dh algorithm"
+msgstr ""
+
+#: website/vpn/sts/forms.py:74
+msgid "null"
+msgstr ""
+
+#: website/vpn/sts/forms.py:86
+msgid "local subnet"
+msgstr ""
+
+#: website/vpn/sts/forms.py:88
+msgid "invalid local subnet"
+msgstr ""
+
+#: website/vpn/sts/forms.py:90
+msgid "local id"
+msgstr ""
+
+#: website/vpn/sts/forms.py:93 website/vpn/sts/templates/sts/flow.html:28
+#: website/vpn/sts/templates/sts/index.html:32
+msgid "remote ip"
+msgstr ""
+
+#: website/vpn/sts/forms.py:95
+msgid "invalid remote ip"
+msgstr ""
+
+#: website/vpn/sts/forms.py:97
+msgid "remote id"
+msgstr ""
+
+#: website/vpn/sts/forms.py:100
+msgid "remote subnet"
+msgstr ""
+
+#: website/vpn/sts/forms.py:102
+msgid "invalid remote subnet"
+msgstr ""
+
+#: website/vpn/sts/forms.py:104
+msgid "psk"
+msgstr ""
+
+#: website/vpn/sts/forms.py:115
+msgid "stop"
+msgstr ""
+
+#: website/vpn/sts/forms.py:122
+msgid "tunnel name"
+msgstr ""
+
+#: website/vpn/sts/forms.py:124
+msgid "connect"
+msgstr ""
+
+#: website/vpn/sts/forms.py:125
+msgid "disconnect"
+msgstr ""
+
+#: website/vpn/sts/services.py:119
+msgid "Strongswan crashed, please contact your system administrator!"
+msgstr ""
+
+#: website/vpn/sts/services.py:144
+msgid "command has been executed but no data retrived."
+msgstr ""
+
+#: website/vpn/sts/services.py:157
+msgid "vpn config file reload failed!"
+msgstr ""
+
+#: website/vpn/sts/services.py:162
+msgid "vpn secret file reload failed!"
+msgstr ""
+
+#: website/vpn/sts/services.py:168
+msgid "strongswan already started!"
+msgstr ""
+
+#: website/vpn/sts/services.py:171
+msgid "strongswan start failed!"
+msgstr ""
+
+#: website/vpn/sts/services.py:177
+msgid "strongswan already stopped!"
+msgstr ""
+
+#: website/vpn/sts/services.py:180
+msgid "strongswan stop failed!"
+msgstr ""
+
+#: website/vpn/sts/services.py:187
+msgid "vpn config files reload failed, please retry!"
+msgstr ""
+
+#: website/vpn/sts/services.py:191
+msgid "vpn config files reload successed, but strongswan is not running."
+msgstr ""
+
+#: website/vpn/sts/services.py:212
+msgid "tunnel already up."
+msgstr ""
+
+#: website/vpn/sts/services.py:215
+msgid "tunnel start failed:"
+msgstr ""
+
+#: website/vpn/sts/services.py:220
+msgid "tunnel already down."
+msgstr ""
+
+#: website/vpn/sts/services.py:223
+msgid "tunnel stop failed:"
+msgstr ""
+
+#: website/vpn/sts/views.py:48
+msgid "site to site tunnel has been added!"
+msgstr ""
+
+#: website/vpn/sts/views.py:52
+#, python-format
+msgid "tunnel exist: %(tunnel_name)s"
+msgstr ""
+
+#: website/vpn/sts/views.py:65
+#, python-format
+msgid "tunnel %(tunnel_name)s has been deleted!"
+msgstr ""
+
+#: website/vpn/sts/views.py:70
+msgid "tunnel config has been updated!"
+msgstr ""
+
+#: website/vpn/sts/views.py:106
+msgid "strongswan has been stopped!"
+msgstr ""
+
+#: website/vpn/sts/views.py:108
+msgid "strongswan has been started!"
+msgstr ""
+
+#: website/vpn/sts/views.py:110
+msgid "strongswan has been reloaded!"
+msgstr ""
+
+#: website/vpn/sts/views.py:121
+msgid "tunnel is up!"
+msgstr ""
+
+#: website/vpn/sts/views.py:123
+msgid "tunnel is down!"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/add.html:7
+#: website/vpn/sts/templates/sts/index.html:7
+#: website/vpn/sts/templates/sts/view.html:7
+msgid "ip sec"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/add.html:26
+msgid "tunnel id: ensure the ids for two sides are consisted."
+msgstr ""
+
+#: website/vpn/sts/templates/sts/add.html:28
+msgid "local/remote cidr: seperated by \",\" when you have multiple value."
+msgstr ""
+
+#: website/vpn/sts/templates/sts/add.html:55
+#: website/vpn/sts/templates/sts/add.html:96
+#: website/vpn/sts/templates/sts/add.html:107
+#: website/vpn/sts/templates/sts/add.html:118
+#: website/vpn/sts/templates/sts/add.html:129
+#: website/vpn/sts/templates/sts/add.html:140
+#: website/vpn/sts/templates/sts/add.html:151
+#: website/vpn/sts/templates/sts/view.html:49
+#: website/vpn/sts/templates/sts/view.html:90
+#: website/vpn/sts/templates/sts/view.html:101
+#: website/vpn/sts/templates/sts/view.html:112
+#: website/vpn/sts/templates/sts/view.html:123
+#: website/vpn/sts/templates/sts/view.html:134
+#: website/vpn/sts/templates/sts/view.html:145
+msgid "please be consisted with the other side"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/add.html:163
+msgid "recommend to set this as ip of this server"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/add.html:167
+#: website/vpn/sts/templates/sts/view.html:161
+msgid "please be consisted with \"remote id\" of the other side"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/add.html:194
+msgid "recommend to set this as ip of the other side"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/add.html:198
+#: website/vpn/sts/templates/sts/view.html:192
+msgid "please be consisted with \"local id\" of the other side"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/console.html:27
+msgid "ipsec vpn service is running"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/console.html:29
+msgid "ipsec vpn service is not running"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/console.html:36
+msgid "start vpn server"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/console.html:38
+msgid "start ip sec vpn server."
+msgstr ""
+
+#: website/vpn/sts/templates/sts/console.html:51
+msgid "stop vpn server"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/console.html:53
+msgid "stop ip sec vpn server. all connected tunnel will be closed."
+msgstr ""
+
+#: website/vpn/sts/templates/sts/flow.html:11
+#: website/vpn/sts/templates/sts/index.html:62
+msgid "flow"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/flow.html:17
+msgid "tunnel info"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/flow.html:27
+#: website/vpn/sts/templates/sts/index.html:31
+msgid "local cidr"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/flow.html:29
+#: website/vpn/sts/templates/sts/index.html:33
+msgid "remote cidr"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/index.html:30
+msgid "auto connect"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/index.html:35
+msgid "view"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/sidenav.html:4
+msgid "tunnels list"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/sidenav.html:6
+msgid "vpn server management"
+msgstr ""
+
+#: website/vpn/sts/templates/sts/view.html:2
+msgid "edit ipsec tunnel"
+msgstr ""
+

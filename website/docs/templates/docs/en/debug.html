@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block title %}Docs{% endblock %}
+
+{% block trail %}
+        <li><a href="/">Home</a></li>
+        <li>Docs</li>
+        <li class="current"><a href="{{ url_for('docs.debug') }}">FAQ</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "docs/en/sidenav.html" %}
+
+    <!-- start of issue table -->
+    <div class="large-10 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h3>FAQ</h3>
+            <hr />
+            <h4>IPSec Site-to-Site tunnel:</h4>
+            <dl>
+              <dt>1. can not establish the connection after the tunnel added?</dt>
+              <dd>Check both ends of the tunnel ID and shared secret key are the same.<br />
+                  Please check the peer EIP.<br />
+                  Try to restart the VPN service.
+              </dd>
+              <dt>2. the tunnel connection is successful, but was unable to visit each other at both ends of the subnet?</dt>
+              <dd>Check that the subnet routing traffic to the VPN VM.<br />
+                  Check the configuration of the remote subnet is wrong. <br />
+                  Try restarting the VPN service.
+              </dd>
+            </dl>
+            <h4>Dial-up VPN:</h4>
+            <dl>
+              <dt>1. customer access connection timeout, follow these steps to try to exclude sequentially checks:</dt>
+              <dd>Check whether the configuration file server address is wrong.<br />
+                  Please check whether the service is turned on.<br />
+                  Please check whether the client is using the correct root certificate (ca.crt).<br />
+                  Please confirm whether the server certificate files or changed configuration.<br />
+                  Please check whether the client has a firewall filtering.<br />
+                  Try restarting the VPN dial-up service.
+              </dd>
+              <dt>2. the client connection failed, with message 'AUTH_FAILED'?</dt>
+              <dd>Please check enter the account password is correct.<br />
+                  Please check whether the server has been added to the account password.<br />
+                  Try restarting the VPN dial-up service.
+              </dd>
+              <dt>3. the client is connected, but can not access the private network VM?</dt>
+              <dd>Try PING server virtual IP (eg 10.8.0.1).<br />
+                  Check to see if the correct open SNAT.<br />
+                  Try restarting the VPN dial-up service.
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of issue table -->
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}Docs{% endblock %}
+
+{% block trail %}
+        <li><a href="/">Home</a></li>
+        <li>Docs</li>
+        <li class="current"><a href="{{ url_for('docs.snat') }}">SNAT</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "docs/en/sidenav.html" %}
+
+    <!-- start of issue table -->
+    <div class="large-10 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h3>SNAT</h3>
+            <hr />
+            <img src="{{ url_for('docs.static', filename='img/en/snat_01.png') }}">
+            <p>As shown above, VPC1 private network is: 172.16.0.0/24.  There is a Gateway VM with flexGW image installed, and bind the EIP.<br />
+            Now we want the VM in VPC1 private network can access the internet, we need to configure SNAT on the GateWay VM.<br />
+            In this example: we want  VM 172.16.0.3 to access the inernet.</p>
+            <h5>At first, add the SNAT entry</h5>
+            <hr />
+            <p>Enter "New SNAT" page under SNAT tab,</p>
+            <img src="{{ url_for('docs.static', filename='img/en/snat_02.png') }}">
+            <ul>
+              <li>Source IP (or network segment): is the private network segment which need to access internet. In this case: 172.16.0.0/24</li>
+              <li>IP converted: is the private network IP of the GateWay VM private. In this case: 172.16.0.1</li>
+            </ul>
+
+            <h5>Second, check SNAT list</h5>
+            <hr />
+            <p>When new SNAT entry added, it will automatically jump to the "SNAT list" page, you can see:</p>
+            <img src="{{ url_for('docs.static', filename='img/en/snat_03.png') }}">
+            <ul>
+              <li>Source IP (or network segment): is the private network segment which need to access internet. In this case: 172.16.0.0/24</li>
+              <li>IP converted: is the private network IP of the GateWay VM private. In this case: 172.16.0.1</li>
+              <li>Delete: Click the "Delete" button to delete the SNAT entry, and take effect immediately.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of issue table -->
+{% endblock content %}

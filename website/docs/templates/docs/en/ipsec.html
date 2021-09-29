@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block title %}Docs{% endblock %}
+
+{% block trail %}
+        <li><a href="/">Home</a></li>
+        <li>Docs</li>
+        <li class="current"><a href="{{ url_for('docs.ipsec') }}">IPSec VPN</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "docs/en/sidenav.html" %}
+
+    <!-- start of issue table -->
+    <div class="large-10 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h3>IPSec Site-to-Site VPN User Guide (VPC network scenario)</h3>
+            <hr />
+            <img src="{{ url_for('docs.static', filename='img/en/ipsec_01.png') }}">
+            <p>As shown above, VPC1 private network is: 172.16.0.0/24, VPC2 private network is: 192.168.0.0/24. One GateWay VM in each of two VPC configured VPN/SNAT, and bind the EIP.<br />
+            Now we want the VMs in the two private networks can communicate with each other, we need to establish an IPSec Site-to-Site tunnel between VPC1 GateWay VM and VPC2 GateWay VM.<br/>
+            In this example: From VPC1 of 172.16.0.3 access VPC2 of 192.168.0.3.</p>
+            <h5>At first, start IPSec VPN service</h5>
+            <hr />
+            <p>Go to IPSec "VPN Service Management" page, make sure both GateWay VM1, GateWay VM2 have IPSec VPN service started.</p>
+            <img src="{{ url_for('docs.static', filename='img/en/ipsec_02.png') }}">
+            <ul>
+              <li>Start VPN service:  Start the IPSec VPN service on the VM. The tunnel startup type as "automatic connection" will automatically try to connect to the remote VPN. </li>
+              <li>Stop VPN service: Stop the IPSec VPN service. All connected tunnels will be  disconnect.</li>
+              <li>Configurate deployment &amp; reload: Generally, this action will be triggered automatically when add, modify or delete the tunnel. But sometimes, if you want to regenerate the VPN configuration,  you can do this manually.</li>
+            </ul>
+            <h5>Second, add new tunnel</h5>
+            <hr />
+            <h6>VPC1 GateWay VM:</h6>
+            <img src="{{ url_for('docs.static', filename='img/en/ipsec_03_01.png') }}">
+            <h6>VPC2 GateWay VM:</h6>
+            <img src="{{ url_for('docs.static', filename='img/en/ipsec_03_02.png') }}">
+            <ul>
+              <li>Tunnel ID is an abbreviation of the tunnel,  please note naming rules.</li>
+              <li>On both sides of the local ID, the peer ID must correspond (It is recommended to use public IP address)</li>
+              <li>IKE version, IKE and ESP encryption, authentication algorithm must be same at both ends (For VPN equipment, please get the configuration information, especially IKE version)</li>
+              <li>Pre-shared key must be the same to establish a connection (shared secret key, please set it more complex).</li>
+              <li>The local subnet 、peer subnet: The previous example 192.168.0.0/24,172.16.0.0/24.</li>
+              <li>The other side of the public network IP: peer GateWay's ECS EIP, it can be a public network IP of the VPN equipment.</li>
+            </ul>
+            <h5>Third, check the tunnel list</h5>
+            <hr />
+            <p>After added tunnel on Gateway VM of VPC1 and VPC2, goto 'tunnel List "page. Click the "Connect" fo the tunnel configured just now, you can see:</p>
+            <img src="{{ url_for('docs.static', filename='img/en/ipsec_04.png') }}">
+            <ul>
+              <li>Connect: connect the tunnels.</li>
+              <li>Disconnect: disconnect the tunnel. </li>
+            </ul>
+            <h5>Fourth, check the real-time traffic of tunnel</h5>
+            <hr />
+            <p>Click on "Traffic" button, you can see real-time traffic of tunnel.</p>
+            <img src="{{ url_for('docs.static', filename='img/en/ipsec_05.png') }}">
+            <ul>
+              <li>Colour: in and out direction.</li>
+              <li>Unit: Bytes.</li>
+            </ul>
+            <h5>Fifth, modify or delete tunnel</h5>
+            <hr />
+            <p>Click to tunnel into the tunnel under the list to enter the modify page:</p>
+            <img src="{{ url_for('docs.static', filename='img/en/ipsec_06.png') }}">
+            <ul>
+              <li>Save: After modifying, click Save, the configuration will take effect immediately, but will not affect the current connected tunnel. You need to manually disconnect and reconnect the tunnel.</li>
+              <li>Delete: Click Delete to delete the tunnel, and it will automatically disconnect the tunnel immediately.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of issue table -->
+{% endblock content %}

@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% block title %}用户设置{% endblock %}
+
+{% block content %}
+    <div class="large-12 large-centered columns">
+        <div class="row">
+            <div class="large-12 columns">
+                <form method="POST" action="{{ url_for('account.select_language') }}">
+                    <div class="large-3 columns">
+                        {{ language_form.language.label(class="right inline") }}
+                    </div>
+                    <div class="large-3 columns">
+                        {% if language_form.language.errors %}
+                        {{ language_form.language(class="error", value=language_form.language.value) }}
+                        <small class="error">{{ language_form.language.errors[0] }}</small>
+                        {% else %}
+                        {{ language_form.language }}
+                        {% endif %}
+                    </div>
+                    <div class="large-6 columns">
+                        <button type="submit" class="button tiny">{{ gettext('confirm') }}</button>
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                    </div>
+                </form>
+            </div>
+            <div class="large-12 columns">
+                <div class="large-3 columns">
+                    <label class="right inline">
+                        MFA:
+                    </label>
+                </div>
+                <div class="large-3 columns">
+                    <label class="inline">
+                        {% if user_details.otp_enabled %}
+                            {{ gettext('enabled') }}
+                        {% else %}
+                            {{ gettext('disabled') }}
+                        {% endif %}
+                    </label>
+                </div>
+                <div class="large-6 columns">
+                </div>
+            </div>
+            <div class="large-12 large-centered columns">
+                {% if user_details.otp_enabled %}
+                <div class="large-6 columns">
+                    <form method="POST" action="{{ url_for('account.mfa_disable') }}">
+                        <div class="row">
+                            <div class="large-3 columns">
+                                {{ form.otp_code.label(class="right inline") }}
+                            </div>
+                            <div class="large-9 columns">
+                                {% if form.otp_code.errors %}
+                                {{ form.otp_code(class="error", value=form.otp_code.value) }}
+                                <small class="error">{{ form.otp_code.errors[0] }}</small>
+                                {% else %}
+                                {{ form.otp_code(placeholder=gettext('otp code')) }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="lagre-4 large-offset-3 columns">
+                            <button type="submit" class="button tiny">{{ gettext('disable') }} MFA</button>
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                {% else %}
+                <div class="large-6 columns">
+                    <p>{{ gettext('using otp tools (e.g. google authenticator) scan the qr code, and fill to qtp code below to enable two step verification.') }}</p>
+                    <img src="{{ url_for('account.mfa_qrcode')}}">
+                    <form method="POST" action="{{ url_for('account.mfa_enable') }}">
+                        <div class="row">
+                            <div class="large-3 columns">
+                                {{ form.otp_code.label(class="right inline") }}
+                            </div>
+                            <div class="large-9 columns">
+                                {% if form.otp_code.errors %}
+                                {{ form.otp_code(class="error", value=form.otp_code.value) }}
+                                <small class="error">{{ form.otp_code.errors[0] }}</small>
+                                {% else %}
+                                {{ form.otp_code(placeholder=gettext('otp code')) }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="lagre-4 large-offset-3 columns">
+                            <button type="submit" class="button tiny">{{ gettext('enable') }} MFA</button>
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

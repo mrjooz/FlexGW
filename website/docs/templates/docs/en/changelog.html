@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Docs{% endblock %}
+
+{% block trail %}
+        <li><a href="/">Home</a></li>
+        <li>Docs</li>
+        <li class="current"><a href="{{ url_for('docs.changelog') }}">ChangeLog</a></li>
+{% endblock trail %}
+
+{% block content %}
+    {% include "docs/en/sidenav.html" %}
+
+    <!-- start of issue table -->
+    <div class="large-10 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h3>ChangeLog</h3>
+            <hr />
+            <h5>2.0.0 － 2021.09.27</h5>
+            <ul>
+              <li>It supports Centos 7</li>
+              <li>Fix date format errors</li>
+              <li>Update multilingual support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of issue table -->
+{% endblock content %}

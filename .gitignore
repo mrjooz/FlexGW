@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+
+# logs
+*.swp
+*.log
+*.pid
+logs/*
+!logs/.gitkeep
+instance/*
+!instance/application.cfg
+!instance/website.db
+
+# some private files
+artwork/

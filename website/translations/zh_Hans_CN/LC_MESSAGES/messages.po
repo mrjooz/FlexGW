@@ -1,0 +1,1084 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FlexGW\n"
+"POT-Creation-Date: 2021-09-27 11:42+0800\n"
+"PO-Revision-Date: 2021-09-27 11:43+0800\n"
+"Last-Translator: 周一鸽 <i@mrjooz.com>\n"
+"Language-Team: i@mrjooz.com\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: ;gettext;lazy_gettext\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: account/forms.py:21 account/templates/account/login.html:29
+msgid "username"
+msgstr "用户名"
+
+#: account/forms.py:22
+msgid "this is required."
+msgstr "这是一个必填项"
+
+#: account/forms.py:23
+msgid "account maximal length is 20."
+msgstr "帐户的最大长度为20。"
+
+#: account/forms.py:26 account/templates/account/login.html:42
+#: vpn/dial/forms.py:26
+msgid "password"
+msgstr "密码"
+
+#: account/forms.py:31
+msgid "invalid username/password"
+msgstr "用户名或密码错误"
+
+#: account/forms.py:35 account/templates/account/mfa.html:29
+#: account/templates/account/settings.html:57
+#: account/templates/account/settings.html:83
+msgid "otp code"
+msgstr "安全码"
+
+#: account/forms.py:36 gre/forms.py:22 gre/forms.py:25 gre/forms.py:28
+#: tcp/forms.py:23 tcp/forms.py:26 tcp/forms.py:29 vpn/dial/forms.py:23
+#: vpn/dial/forms.py:27 vpn/dial/forms.py:37 vpn/dial/forms.py:40
+#: vpn/sts/forms.py:23 vpn/sts/forms.py:87 vpn/sts/forms.py:91
+#: vpn/sts/forms.py:94 vpn/sts/forms.py:98 vpn/sts/forms.py:101
+#: vpn/sts/forms.py:105
+msgid "this is required"
+msgstr "这是一个必填项"
+
+#: account/forms.py:37
+msgid "Length must be 6."
+msgstr "长度必须为6"
+
+#: account/forms.py:43
+msgid "language"
+msgstr "语言"
+
+#: account/templates/account/login.html:17
+#: account/templates/account/login.html:48
+msgid "login"
+msgstr "登录"
+
+#: account/templates/account/mfa.html:17
+msgid "mfa two step verification"
+msgstr "MFA 两步验证"
+
+#: account/templates/account/mfa.html:35
+msgid "verify"
+msgstr "验证"
+
+#: account/templates/account/settings.html:21
+msgid "confirm"
+msgstr "确认"
+
+#: account/templates/account/settings.html:35
+msgid "enabled"
+msgstr "已启用"
+
+#: account/templates/account/settings.html:37
+msgid "disabled"
+msgstr "已禁用"
+
+#: account/templates/account/settings.html:63
+msgid "disable"
+msgstr "禁用"
+
+#: account/templates/account/settings.html:71
+msgid ""
+"using otp tools (e.g. google authenticator) scan the qr code, and fill to "
+"qtp code below to enable two step verification."
+msgstr ""
+"使用OTP两步验证工具（例如Google Authenticator）扫描以下二维码，然后将生成的安"
+"全码填入后便可启用MFA两步验证。"
+
+#: account/templates/account/settings.html:89
+msgid "enable"
+msgstr "启用"
+
+#: gre/forms.py:21 gre/templates/gre/index.html:30
+msgid "local router ip"
+msgstr "本端路由IP"
+
+#: gre/forms.py:24 gre/templates/gre/index.html:31
+msgid "remote router ip"
+msgstr "对端路由IP"
+
+#: gre/forms.py:27 gre/templates/gre/index.html:32
+msgid "subnet"
+msgstr "子网"
+
+#: gre/forms.py:31 tcp/forms.py:31 vpn/sts/templates/sts/sidenav.html:5
+msgid "create tunnel"
+msgstr "创建隧道"
+
+#: gre/forms.py:37 snat/forms.py:52 tcp/forms.py:38
+msgid "ensure"
+msgstr "确保"
+
+#: gre/forms.py:38 snat/forms.py:53 tcp/forms.py:39
+msgid "reset"
+msgstr "重置"
+
+#: gre/templates/gre/add.html:2 gre/templates/gre/add.html:7
+#: gre/templates/gre/sidenav.html:5
+msgid "add gre tunnel"
+msgstr "创建隧道"
+
+#: gre/templates/gre/add.html:5 gre/templates/gre/console.html:5
+#: gre/templates/gre/index.html:5 snat/templates/add.html:5
+#: snat/templates/console.html:5 snat/templates/index.html:5
+#: tcp/templates/tcp/add.html:5 tcp/templates/tcp/console.html:5
+#: tcp/templates/tcp/index.html:5 vpn/dial/templates/dial/add.html:5
+#: vpn/dial/templates/dial/console.html:5
+#: vpn/dial/templates/dial/download.html:5 vpn/dial/templates/dial/index.html:5
+#: vpn/dial/templates/dial/settings.html:5 vpn/dial/templates/dial/view.html:5
+#: vpn/sts/templates/sts/add.html:5 vpn/sts/templates/sts/console.html:5
+#: vpn/sts/templates/sts/flow.html:9 vpn/sts/templates/sts/index.html:5
+#: vpn/sts/templates/sts/view.html:5
+msgid "home"
+msgstr "HOME"
+
+#: gre/templates/gre/add.html:6 gre/templates/gre/console.html:6
+#: gre/templates/gre/index.html:6
+msgid "gre"
+msgstr "GRE"
+
+#: gre/templates/gre/add.html:39
+msgid "Using private ip in VPC."
+msgstr "VPC环境中请用VPN私网IP"
+
+#: gre/templates/gre/add.html:56
+msgid "Public IP for the other side."
+msgstr "对端设备的公网IP"
+
+#: gre/templates/gre/add.html:72
+msgid "Subnet of the other side."
+msgstr "对端子网"
+
+#: gre/templates/gre/add.html:78
+msgid "create gre tunnel"
+msgstr "创建隧道"
+
+#: gre/templates/gre/console.html:7
+msgid "gre console"
+msgstr "GRE Console"
+
+#: gre/templates/gre/console.html:29
+msgid "ensure all tunnels"
+msgstr "确保所有隧道"
+
+#: gre/templates/gre/console.html:31
+msgid "ensure all gre tunnels, will not disconnect exist tunnels."
+msgstr "确保所有隧道建立，不会断开已连接的隧道。"
+
+#: gre/templates/gre/console.html:40
+msgid "reset all tunnels"
+msgstr "重置所有隧道"
+
+#: gre/templates/gre/console.html:42
+msgid "reset all tunnels, disconnect all tunnels and reconnect."
+msgstr "重置所有隧道，断开所有隧道并重连"
+
+#: gre/templates/gre/index.html:2 gre/templates/gre/index.html:7
+#: gre/templates/gre/sidenav.html:4
+msgid "gre tunnels list"
+msgstr "隧道列表"
+
+#: gre/templates/gre/index.html:33 snat/templates/index.html:39
+#: tcp/templates/tcp/index.html:41 vpn/sts/templates/sts/index.html:36
+msgid "operations"
+msgstr "操作"
+
+#: gre/templates/gre/index.html:47 tcp/templates/tcp/index.html:55
+#: vpn/dial/forms.py:53
+msgid "close"
+msgstr "关闭"
+
+#: gre/templates/gre/sidenav.html:6
+msgid "gre tunnel management"
+msgstr "隧道管理"
+
+#: gre/views.py:45
+msgid "there is not gre tunnel."
+msgstr "目前没有 GRE 隧道"
+
+#: gre/views.py:75
+msgid "all tunnels started!"
+msgstr "所有隧道都已建立！"
+
+#: gre/views.py:78
+msgid "all tunnels reseted!"
+msgstr "所有隧道已重建"
+
+#: snat/services.py:41 snat/services.py:109 tcp/services.py:66
+msgid "iptables crashed, please contact your system admin."
+msgstr "iptables损坏，请联系系统管理员。"
+
+#: snat/services.py:47 tcp/services.py:72
+#, python-format
+msgid "get rules failed: %(err)s"
+msgstr "获取规则失败: %(err)s"
+
+#: snat/services.py:96
+#, python-format
+msgid "the rule already exist: %(source)s ==> %(gateway)s"
+msgstr "规则一存在: %(source)s ==> %(gateway)s"
+
+#: snat/services.py:117
+#, python-format
+msgid "set rule failed: %(err)s"
+msgstr "设置规则失败: %(err)s"
+
+#: snat/templates/add.html:2 snat/templates/add.html:6
+#: snat/templates/add.html:7 snat/templates/add.html:14
+#: snat/templates/add.html:15 snat/templates/add.html:16
+#: snat/templates/console.html:6 snat/templates/index.html:2
+#: snat/templates/index.html:6 snat/templates/index.html:13
+#: snat/templates/index.html:14 snat/templates/index.html:15
+#: snat/templates/sidenav.html:4 snat/templates/sidenav.html:5
+#: snat/templates/sidenav.html:6 templates/layout.html:61
+#: templates/settings.html:8
+msgid "snat"
+msgstr "SNAT"
+
+#: snat/templates/add.html:2 snat/templates/add.html:7
+#: snat/templates/add.html:15 snat/templates/add.html:69
+#: snat/templates/index.html:14 snat/templates/sidenav.html:5
+msgid "add"
+msgstr "新增"
+
+#: snat/templates/add.html:14 snat/templates/index.html:2
+#: snat/templates/index.html:13 snat/templates/sidenav.html:4
+msgid "list"
+msgstr "列表"
+
+#: snat/templates/add.html:16 snat/templates/index.html:15
+#: snat/templates/sidenav.html:6
+msgid "management"
+msgstr "管理"
+
+#: snat/templates/add.html:34
+msgid "notice: \"to source ip\" should be local private ip."
+msgstr "注意: 「转换后IP」应为你本地服务器的内网IP。"
+
+#: snat/templates/console.html:7
+msgid "console"
+msgstr "Console"
+
+#: snat/templates/console.html:29 tcp/templates/tcp/console.html:29
+msgid "ensure iptables"
+msgstr "确保iptables规则建立"
+
+#: snat/templates/console.html:31 tcp/templates/tcp/console.html:31
+msgid "ensure iptables from database"
+msgstr "确保iptables规则与数据库同步"
+
+#: snat/templates/console.html:40 tcp/templates/tcp/console.html:40
+msgid "reset iptables"
+msgstr "重置iptables规则"
+
+#: snat/templates/console.html:42
+msgid "reset database from database"
+msgstr "重置iptables规则与数据库同步"
+
+#: snat/templates/index.html:37
+msgid "need convert cidr"
+msgstr "需要转换的网段"
+
+#: snat/templates/index.html:38
+msgid "to source"
+msgstr "转换后IP"
+
+#: snat/templates/index.html:53 vpn/dial/forms.py:32 vpn/sts/forms.py:109
+msgid "delete"
+msgstr "删除"
+
+#: snat/views.py:35
+msgid "there is no snat ruls yet."
+msgstr "目前还没有SNAT规则"
+
+#: snat/views.py:45
+#, python-format
+msgid "snat rule is added: %(source)s ==> %(gateway)s."
+msgstr "SNAT规则添加成功: %(source)s ==> %(gateway)s."
+
+#: snat/views.py:57
+#, python-format
+msgid "snat rule is gettextd: %(source)s ==> %(gateway)s."
+msgstr "SNAT规则删除成功: %(source)s ==> %(gateway)s."
+
+#: snat/views.py:70 tcp/views.py:74
+msgid "all snat started!"
+msgstr "所有SNAT规则都已建立！"
+
+#: snat/views.py:73 tcp/views.py:77
+msgid "all snat reseted!"
+msgstr "所有SNAT规则已重建"
+
+#: tcp/forms.py:22 tcp/templates/tcp/index.html:38
+msgid "local port"
+msgstr "本地端口"
+
+#: tcp/forms.py:25 tcp/templates/tcp/index.html:39
+msgid "destination ip"
+msgstr "目标IP"
+
+#: tcp/forms.py:28 tcp/templates/tcp/index.html:40
+msgid "destination port"
+msgstr "目标端口"
+
+#: tcp/templates/tcp/add.html:6 tcp/templates/tcp/console.html:6
+#: tcp/templates/tcp/index.html:6
+msgid "tcp"
+msgstr "TCP"
+
+#: tcp/templates/tcp/add.html:7
+msgid "new tcp tunnel"
+msgstr "新增 TCP 隧道"
+
+#: tcp/templates/tcp/add.html:72 tcp/templates/tcp/index.html:15
+#: tcp/templates/tcp/sidenav.html:5
+msgid "create tcp tunnel"
+msgstr "新增 TCP 隧道"
+
+#: tcp/templates/tcp/console.html:7 tcp/templates/tcp/index.html:16
+#: tcp/templates/tcp/sidenav.html:6
+msgid "manage tcp tunnel"
+msgstr "管理 TCP 隧道"
+
+#: tcp/templates/tcp/console.html:42
+msgid "reset iptables from database"
+msgstr "确保iptables规则与数据库同步"
+
+#: tcp/templates/tcp/index.html:2 tcp/templates/tcp/index.html:7
+#: tcp/templates/tcp/index.html:14 tcp/templates/tcp/sidenav.html:4
+msgid "tcp tunnels list"
+msgstr "TCP 隧道列表"
+
+#: tcp/views.py:44
+msgid "there is no tcp tunnel yet."
+msgstr "目前还没有TCP隧道。"
+
+#: templates/layout.html:8
+msgid "gateway"
+msgstr "Gateway"
+
+#: templates/layout.html:25
+msgid "flex gateway"
+msgstr "Flex Gateway"
+
+#: templates/layout.html:54
+msgid "menu"
+msgstr "菜单"
+
+#: templates/layout.html:59
+msgid "ipsec vpn"
+msgstr "IPSec VPN"
+
+#: templates/layout.html:60
+msgid "dial vpn"
+msgstr "拨号VPN"
+
+#: templates/layout.html:62
+msgid "tcp tunnel"
+msgstr "TCP 隧道"
+
+#: templates/layout.html:63
+msgid "gre tunnel"
+msgstr "GRE 隧道"
+
+#: templates/layout.html:66
+msgid "docs"
+msgstr "文档"
+
+#: templates/layout.html:67
+msgid "check for update"
+msgstr "检查更新"
+
+#: templates/layout.html:68 templates/settings.html:9
+#: vpn/dial/templates/dial/sidenav.html:6
+msgid "settings"
+msgstr "设置"
+
+#: templates/layout.html:69
+msgid "logout"
+msgstr "登出"
+
+#: templates/settings.html:7 vpn/dial/templates/dial/add.html:6
+#: vpn/dial/templates/dial/download.html:6 vpn/dial/templates/dial/index.html:6
+#: vpn/dial/templates/dial/settings.html:6 vpn/dial/templates/dial/view.html:6
+#: vpn/sts/templates/sts/add.html:6 vpn/sts/templates/sts/console.html:6
+#: vpn/sts/templates/sts/flow.html:10 vpn/sts/templates/sts/index.html:6
+#: vpn/sts/templates/sts/view.html:6
+msgid "vpn"
+msgstr "VPN"
+
+#: templates/settings.html:19
+msgid "vpn client ip pool"
+msgstr "VPN 客户端 IP 池"
+
+#: templates/settings.html:29
+msgid "snat gateway"
+msgstr "SNAT Gateway"
+
+#: templates/settings.html:39 vpn/dial/forms.py:31
+#: vpn/dial/templates/dial/add.html:59 vpn/dial/templates/dial/settings.html:89
+#: vpn/sts/forms.py:108 vpn/sts/templates/sts/add.html:249
+msgid "save"
+msgstr "保存"
+
+#: utils/validators.py:16
+msgid "OTP Code incorrect."
+msgstr "安全码错误。"
+
+#: utils/validators.py:34
+msgid "invalid ip."
+msgstr "无效的IP。"
+
+#: utils/validators.py:64
+msgid "invalid subnet."
+msgstr "子网格式错误。"
+
+#: utils/validators.py:73
+msgid "invalid ip or subnet."
+msgstr "IP / 子网格式错误。"
+
+#: utils/validators.py:94
+msgid "port in use."
+msgstr "端口被占用"
+
+#: utils/validators.py:108
+msgid "invalid public ip"
+msgstr "错误的公网IP"
+
+#: utils/validators.py:129 vpn/dial/forms.py:38
+msgid "invalid ip pool"
+msgstr "无效的IP地址池"
+
+#: vpn/dial/forms.py:22 vpn/dial/templates/dial/index.html:31
+msgid "account"
+msgstr "帐号"
+
+#: vpn/dial/forms.py:24 vpn/sts/forms.py:24
+msgid "account maximal length is 20"
+msgstr "帐户的最大长度为20。"
+
+#: vpn/dial/forms.py:25 vpn/sts/forms.py:25
+msgid "only contains number, alpha, underline."
+msgstr "只可包含如下字符：数字、字母、下划线。"
+
+#: vpn/dial/forms.py:28
+msgid "password maximal length is 20"
+msgstr "密码最大长度为20"
+
+#: vpn/dial/forms.py:36
+msgid "ip pool"
+msgstr "IP池"
+
+#: vpn/dial/forms.py:39
+msgid "subnets"
+msgstr "子网"
+
+#: vpn/dial/forms.py:41
+msgid "invalid subnets"
+msgstr "子网格式错误"
+
+#: vpn/dial/forms.py:42
+msgid "allow communicate between clients"
+msgstr "允许客户端之间通信"
+
+#: vpn/dial/forms.py:43 vpn/dial/forms.py:45
+msgid "no"
+msgstr "否"
+
+#: vpn/dial/forms.py:43 vpn/dial/forms.py:45
+msgid "yes"
+msgstr "是"
+
+#: vpn/dial/forms.py:44
+msgid "allow multi login using one account"
+msgstr "允许同一帐号多处登录"
+
+#: vpn/dial/forms.py:46
+msgid "protocol"
+msgstr "通讯协议"
+
+#: vpn/dial/forms.py:54 vpn/sts/forms.py:116
+msgid "start"
+msgstr "启动"
+
+#: vpn/dial/forms.py:55 vpn/sts/forms.py:117
+msgid "install&reload"
+msgstr "下发 & 重载"
+
+#: vpn/dial/services.py:133
+msgid "OpenVPN is crashed, please contact your system admin."
+msgstr "OpenVPN 损坏，请联系系统管理员。"
+
+#: vpn/dial/services.py:151
+msgid "vpn service reload failed!"
+msgstr "VPN 服务重载失败！"
+
+#: vpn/dial/services.py:156
+msgid "client config packaging failed!"
+msgstr "客户端配置打包失败！"
+
+#: vpn/dial/services.py:162
+msgid "service already started!"
+msgstr "服务已启动！"
+
+#: vpn/dial/services.py:165
+msgid "vpn service start failed!"
+msgstr "VPN 服务启动失败！"
+
+#: vpn/dial/services.py:171
+msgid "service already stopped."
+msgstr "服务已停止！"
+
+#: vpn/dial/services.py:174
+msgid "vpn service stop failed"
+msgstr "VPN 服务停止失败！"
+
+#: vpn/dial/services.py:181
+msgid "vpn config file set failed, please retry!"
+msgstr "VPN 配置文件设置失败，请重试！"
+
+#: vpn/dial/services.py:186
+msgid "vpn config file set successed, vpn service is not running."
+msgstr "VPN 配置文件设置成功，但是VPN 服务没有启动！"
+
+#: vpn/dial/templates/dial/add.html:2
+msgid "create vpn dial"
+msgstr "新增拨号 VPN"
+
+#: vpn/dial/templates/dial/add.html:7 vpn/dial/templates/dial/download.html:7
+#: vpn/dial/templates/dial/index.html:7 vpn/dial/templates/dial/settings.html:7
+#: vpn/dial/templates/dial/view.html:7
+msgid "dial"
+msgstr "拨号"
+
+#: vpn/dial/templates/dial/add.html:26
+msgid "notice: \"account\" only contains number, alpha, underline."
+msgstr "注意：「账号名」只可包含如下字符：数字、字母、下划线。"
+
+#: vpn/dial/templates/dial/console.html:7 vpn/sts/templates/sts/console.html:7
+msgid "vpn console"
+msgstr "VPN Console"
+
+#: vpn/dial/templates/dial/console.html:27
+msgid "service running."
+msgstr "服务正在运行。"
+
+#: vpn/dial/templates/dial/console.html:29
+msgid "service is not running."
+msgstr "服务没有运行。"
+
+#: vpn/dial/templates/dial/console.html:36
+msgid "start vpn service"
+msgstr "启动 VPN 服务"
+
+#: vpn/dial/templates/dial/console.html:37
+msgid ""
+"start vpn service. It will not interupt the vpn service which is running."
+msgstr "启动 VPN 服务。不会导致正在使用的连接无效。"
+
+#: vpn/dial/templates/dial/console.html:49
+msgid "stop vpn service"
+msgstr "停止 VPN 服务"
+
+#: vpn/dial/templates/dial/console.html:50
+msgid "stop vpn service. when service is down, all tunnels will be closed."
+msgstr "停止 VPN 服务。当VPN服务器被停止，所有隧道将被关闭。"
+
+#: vpn/dial/templates/dial/console.html:62
+#: vpn/sts/templates/sts/console.html:65
+msgid "config install & reload"
+msgstr "配置下发 & 重载"
+
+#: vpn/dial/templates/dial/console.html:63
+#: vpn/sts/templates/sts/console.html:66
+msgid ""
+"install new vpn config and make it effect. recommend using this after edit "
+"vpn config."
+msgstr "下发新的 VPN 配置并使之生效，建议您在修改VPN配置后使用，"
+
+#: vpn/dial/templates/dial/download.html:26
+msgid ""
+"notice: after download config file, replace the \"EIP\" with public ip of "
+"your server."
+msgstr ""
+"注意：「配置」文件下载后，请将配置文件中的「EIP」字段修改为本机所绑定的IP 地"
+"址。"
+
+#: vpn/dial/templates/dial/download.html:31
+msgid "description"
+msgstr "描述"
+
+#: vpn/dial/templates/dial/download.html:32
+msgid "client"
+msgstr "客户端"
+
+#: vpn/dial/templates/dial/download.html:33
+msgid "config"
+msgstr "配置"
+
+#: vpn/dial/templates/dial/index.html:26
+msgid "notice: Because of keepalive of vpn, status may have a minute delay."
+msgstr "注意：「状态」由于VPN 的keepalive 机制，会有1分钟左右的延时。"
+
+#: vpn/dial/templates/dial/index.html:32
+msgid "real ip"
+msgstr "真实IP"
+
+#: vpn/dial/templates/dial/index.html:33
+msgid "virtual ip"
+msgstr "虚拟IP"
+
+#: vpn/dial/templates/dial/index.html:34 vpn/sts/templates/sts/flow.html:20
+#: vpn/sts/templates/sts/index.html:34
+msgid "status"
+msgstr "状态"
+
+#: vpn/dial/templates/dial/index.html:35
+msgid "bytes received"
+msgstr "接收字节"
+
+#: vpn/dial/templates/dial/index.html:36
+msgid "bytes sent"
+msgstr "发送字节"
+
+#: vpn/dial/templates/dial/index.html:37
+msgid "connection duration"
+msgstr "连接时间"
+
+#: vpn/dial/templates/dial/index.html:38
+msgid "created time"
+msgstr "创建时间"
+
+#: vpn/dial/templates/dial/index.html:50 vpn/sts/templates/sts/flow.html:22
+msgid "online"
+msgstr "在线"
+
+#: vpn/dial/templates/dial/index.html:52 vpn/sts/templates/sts/flow.html:24
+msgid "offline"
+msgstr "离线"
+
+#: vpn/dial/templates/dial/settings.html:26
+msgid ""
+"virtual ip pool: ip pool allocated for vpn client. subnet cidr: cidr for "
+"route when client connection, seperated by \",\"."
+msgstr ""
+"虚拟IP 地址池: 为VPN Server 分配给客户端的虚拟IP 地址池。子网网段：为客户端连"
+"接之后可以访问的子网网段。可以填写多个子网，用英文「,」分割。"
+
+#: vpn/dial/templates/dial/settings.html:29
+msgid ""
+"notes: when you save the vpn config, vpn server will reload and all "
+"connections will reconnect."
+msgstr "注：保存修改后，会重载VPN 服务，所有客户端将会自动断开重连。"
+
+#: vpn/dial/templates/dial/sidenav.html:4
+msgid "accounts list"
+msgstr "帐号列表"
+
+#: vpn/dial/templates/dial/sidenav.html:5
+msgid "create account"
+msgstr "新增帐号"
+
+#: vpn/dial/templates/dial/sidenav.html:7
+msgid "vpn service management"
+msgstr "VPN 服务管理"
+
+#: vpn/dial/templates/dial/sidenav.html:8
+msgid "download client"
+msgstr "下载客户端"
+
+#: vpn/dial/templates/dial/view.html:2
+msgid "VPN Dial Account Modify"
+msgstr "拨号VPN 账户修改"
+
+#: vpn/dial/templates/dial/view.html:26
+msgid ""
+"notice: after delete account, vpn service will reload to ensure connection "
+"using the account is disconnected."
+msgstr "注意：删除账号会重载VPN 服务，以确保被删除的账号断开连接。"
+
+#: vpn/dial/templates/dial/view.html:57
+msgid "show password"
+msgstr "显示密码"
+
+#: vpn/dial/views.py:37 vpn/sts/views.py:37
+msgid "there is no vpn config yet."
+msgstr "目前没有VPN配置。"
+
+#: vpn/dial/views.py:46
+msgid "please config vpn before add account."
+msgstr "请先进行「设置」再添加VPN 账号。"
+
+#: vpn/dial/views.py:52
+msgid "add vpn account successed."
+msgstr "添加VPN帐号成功。"
+
+#: vpn/dial/views.py:56
+#, python-format
+msgid "the account is exist: %(account)s"
+msgstr "帐号已存在: %(account)s"
+
+#: vpn/dial/views.py:68
+msgid "vpn config update successed!"
+msgstr "VPN 配置更新成功"
+
+#: vpn/dial/views.py:86
+#, python-format
+msgid "account deleted: %(account)s"
+msgstr "帐号已删除: %(account)s"
+
+#: vpn/dial/views.py:91
+msgid "update account successed"
+msgstr "帐号更新成功。"
+
+#: vpn/dial/views.py:103
+msgid "vpn service stopped!"
+msgstr "VPN 服务停止成功！"
+
+#: vpn/dial/views.py:105
+msgid "vpn service started!"
+msgstr "VPN 服务启动成功！"
+
+#: vpn/dial/views.py:107
+msgid "vpn service reloaded!"
+msgstr "VPN 服务重载成功！"
+
+#: vpn/sts/forms.py:19 vpn/sts/templates/sts/index.html:29
+msgid "ike version"
+msgstr "IKE 版本"
+
+#: vpn/sts/forms.py:22 vpn/sts/templates/sts/flow.html:19
+#: vpn/sts/templates/sts/index.html:28
+msgid "tunnel id"
+msgstr "隧道ID"
+
+#: vpn/sts/forms.py:27
+msgid "auto start"
+msgstr "自动连接"
+
+#: vpn/sts/forms.py:28 vpn/sts/templates/sts/index.html:47
+msgid "manual"
+msgstr "手动"
+
+#: vpn/sts/forms.py:28 vpn/sts/templates/sts/index.html:49
+msgid "auto"
+msgstr "自动"
+
+#: vpn/sts/forms.py:30
+msgid "negotiation mode"
+msgstr "协商模式"
+
+#: vpn/sts/forms.py:31
+msgid "active"
+msgstr "主动模式"
+
+#: vpn/sts/forms.py:31
+msgid "aggressive"
+msgstr "野蛮模式"
+
+#: vpn/sts/forms.py:33
+msgid "dpd action"
+msgstr "DPD检测"
+
+#: vpn/sts/forms.py:34
+msgid "none"
+msgstr "None"
+
+#: vpn/sts/forms.py:34
+msgid "clear"
+msgstr "Clear"
+
+#: vpn/sts/forms.py:35
+msgid "hold"
+msgstr "Hold"
+
+#: vpn/sts/forms.py:35
+msgid "restart"
+msgstr "Restart"
+
+#: vpn/sts/forms.py:37
+msgid "ike encryption algorithm"
+msgstr "IKE 加密算法"
+
+#: vpn/sts/forms.py:41
+msgid "ike integrity algorithm "
+msgstr "IKE 验证算法"
+
+#: vpn/sts/forms.py:47
+msgid "ike dh algorithm"
+msgstr "IKE DH算法"
+
+#: vpn/sts/forms.py:59
+msgid "esp encryption algorithm"
+msgstr "ESP 加密算法"
+
+#: vpn/sts/forms.py:68
+msgid "esp integrity algorithm"
+msgstr "ESP 验证算法"
+
+#: vpn/sts/forms.py:73
+msgid "esp dh algorithm"
+msgstr "ESP DH算法"
+
+#: vpn/sts/forms.py:74
+msgid "null"
+msgstr "空"
+
+#: vpn/sts/forms.py:86
+msgid "local subnet"
+msgstr "本端子网"
+
+#: vpn/sts/forms.py:88
+msgid "invalid local subnet"
+msgstr "本端子网错误"
+
+#: vpn/sts/forms.py:90
+msgid "local id"
+msgstr "本端ID"
+
+#: vpn/sts/forms.py:93 vpn/sts/templates/sts/flow.html:28
+#: vpn/sts/templates/sts/index.html:32
+msgid "remote ip"
+msgstr "对端IP"
+
+#: vpn/sts/forms.py:95
+msgid "invalid remote ip"
+msgstr "错误的对端IP"
+
+#: vpn/sts/forms.py:97
+msgid "remote id"
+msgstr "对端ID"
+
+#: vpn/sts/forms.py:100
+msgid "remote subnet"
+msgstr "对端子网"
+
+#: vpn/sts/forms.py:102
+msgid "invalid remote subnet"
+msgstr "错误的对端子网"
+
+#: vpn/sts/forms.py:104
+msgid "psk"
+msgstr "预共享密钥"
+
+#: vpn/sts/forms.py:115
+msgid "stop"
+msgstr "停止"
+
+#: vpn/sts/forms.py:122
+msgid "tunnel name"
+msgstr "隧道名称"
+
+#: vpn/sts/forms.py:124
+msgid "connect"
+msgstr "连接"
+
+#: vpn/sts/forms.py:125
+msgid "disconnect"
+msgstr "断开连接"
+
+#: vpn/sts/services.py:119
+msgid "Strongswan crashed, please contact your system administrator!"
+msgstr "StrongSwan 损坏，请联系系统管理员！"
+
+#: vpn/sts/services.py:144
+msgid "command has been executed but no data retrived."
+msgstr "命令已执行但没有数据返回。"
+
+#: vpn/sts/services.py:157
+msgid "vpn config file reload failed!"
+msgstr "VPN配置下发 & 重载失败！"
+
+#: vpn/sts/services.py:162
+msgid "vpn secret file reload failed!"
+msgstr "VPN密钥文件下发失败！"
+
+#: vpn/sts/services.py:168
+msgid "strongswan already started!"
+msgstr "StrongSwan已启动！"
+
+#: vpn/sts/services.py:171
+msgid "strongswan start failed!"
+msgstr "StrongSwan启动失败！"
+
+#: vpn/sts/services.py:177
+msgid "strongswan already stopped!"
+msgstr "StrongSwan已停止！"
+
+#: vpn/sts/services.py:180
+msgid "strongswan stop failed!"
+msgstr "StrongSwan停止失败！"
+
+#: vpn/sts/services.py:187
+msgid "vpn config files reload failed, please retry!"
+msgstr "VPN配置文件重载失败，请重试！"
+
+#: vpn/sts/services.py:191
+msgid "vpn config files reload successed, but strongswan is not running."
+msgstr "VPN配置文件重载成功，但StrongSwan没有启动！"
+
+#: vpn/sts/services.py:212
+msgid "tunnel already up."
+msgstr "隧道已启用！"
+
+#: vpn/sts/services.py:215
+msgid "tunnel start failed:"
+msgstr "隧道启动失败："
+
+#: vpn/sts/services.py:220
+msgid "tunnel already down."
+msgstr "隧道已关闭！"
+
+#: vpn/sts/services.py:223
+msgid "tunnel stop failed:"
+msgstr "隧道停止失败！"
+
+#: vpn/sts/templates/sts/add.html:7 vpn/sts/templates/sts/index.html:7
+#: vpn/sts/templates/sts/view.html:7
+msgid "ip sec"
+msgstr "IPSec"
+
+#: vpn/sts/templates/sts/add.html:26
+msgid "tunnel id: ensure the ids for two sides are consisted."
+msgstr ""
+"隧道ID：互相连接的隧道两端ID 需要保持一致。本端/对端子网：可以填写多个子网，"
+"用英文「,」分割。"
+
+#: vpn/sts/templates/sts/add.html:28
+msgid "local/remote cidr: seperated by \",\" when you have multiple value."
+msgstr "本地/远程网段: 当有多个时用「,」分隔。"
+
+#: vpn/sts/templates/sts/add.html:55 vpn/sts/templates/sts/add.html:96
+#: vpn/sts/templates/sts/add.html:107 vpn/sts/templates/sts/add.html:118
+#: vpn/sts/templates/sts/add.html:129 vpn/sts/templates/sts/add.html:140
+#: vpn/sts/templates/sts/add.html:151 vpn/sts/templates/sts/view.html:49
+#: vpn/sts/templates/sts/view.html:90 vpn/sts/templates/sts/view.html:101
+#: vpn/sts/templates/sts/view.html:112 vpn/sts/templates/sts/view.html:123
+#: vpn/sts/templates/sts/view.html:134 vpn/sts/templates/sts/view.html:145
+msgid "please be consisted with the other side"
+msgstr "请与对端保持一致"
+
+#: vpn/sts/templates/sts/add.html:163
+msgid "recommend to set this as ip of this server"
+msgstr "建议使用本服务器的公网IP"
+
+#: vpn/sts/templates/sts/add.html:167 vpn/sts/templates/sts/view.html:161
+msgid "please be consisted with \"remote id\" of the other side"
+msgstr "请与对端的「对端ID」保持一致"
+
+#: vpn/sts/templates/sts/add.html:194
+msgid "recommend to set this as ip of the other side"
+msgstr "建议设为对端服务器的公网IP"
+
+#: vpn/sts/templates/sts/add.html:198 vpn/sts/templates/sts/view.html:192
+msgid "please be consisted with \"local id\" of the other side"
+msgstr "请与对端的「本端ID」保持一致"
+
+#: vpn/sts/templates/sts/console.html:27
+msgid "ipsec vpn service is running"
+msgstr "IPSec VPN 正在运行"
+
+#: vpn/sts/templates/sts/console.html:29
+msgid "ipsec vpn service is not running"
+msgstr "IPSec VPN 没有运行"
+
+#: vpn/sts/templates/sts/console.html:36
+msgid "start vpn server"
+msgstr "启动 VPN 服务"
+
+#: vpn/sts/templates/sts/console.html:38
+msgid "start ip sec vpn server."
+msgstr "启动 IPSec VPN 服务"
+
+#: vpn/sts/templates/sts/console.html:51
+msgid "stop vpn server"
+msgstr "停止 VPN 服务"
+
+#: vpn/sts/templates/sts/console.html:53
+msgid "stop ip sec vpn server. all connected tunnel will be closed."
+msgstr "停止 IPSec VPN 服务， 所有连接着的隧道将会被关闭。"
+
+#: vpn/sts/templates/sts/flow.html:11 vpn/sts/templates/sts/index.html:62
+msgid "flow"
+msgstr "流量"
+
+#: vpn/sts/templates/sts/flow.html:17
+msgid "tunnel info"
+msgstr "隧道信息"
+
+#: vpn/sts/templates/sts/flow.html:27 vpn/sts/templates/sts/index.html:31
+msgid "local cidr"
+msgstr "本地网段"
+
+#: vpn/sts/templates/sts/flow.html:29 vpn/sts/templates/sts/index.html:33
+msgid "remote cidr"
+msgstr "对端网段"
+
+#: vpn/sts/templates/sts/index.html:30
+msgid "auto connect"
+msgstr "自动连接"
+
+#: vpn/sts/templates/sts/index.html:35
+msgid "view"
+msgstr "查看"
+
+#: vpn/sts/templates/sts/sidenav.html:4
+msgid "tunnels list"
+msgstr "隧道列表"
+
+#: vpn/sts/templates/sts/sidenav.html:6
+msgid "vpn server management"
+msgstr "VPN 服务管理"
+
+#: vpn/sts/templates/sts/view.html:2
+msgid "edit ipsec tunnel"
+msgstr "编辑 IPSec 隧道"
+
+#: vpn/sts/views.py:48
+msgid "site to site tunnel has been added!"
+msgstr "Site to Site 隧道添加成功！"
+
+#: vpn/sts/views.py:52
+#, python-format
+msgid "tunnel exist: %(tunnel_name)s"
+msgstr "隧道已存在：%(tunnel_name)s"
+
+#: vpn/sts/views.py:65
+#, python-format
+msgid "tunnel %(tunnel_name)s has been deleted!"
+msgstr "隧道 %(tunnel_name)s  删除成功！"
+
+#: vpn/sts/views.py:70
+msgid "tunnel config has been updated!"
+msgstr "隧道配置已更新！"
+
+#: vpn/sts/views.py:106
+msgid "strongswan has been stopped!"
+msgstr "StrongSwan 停止成功！"
+
+#: vpn/sts/views.py:108
+msgid "strongswan has been started!"
+msgstr "StrongSwan 启动成功！"
+
+#: vpn/sts/views.py:110
+msgid "strongswan has been reloaded!"
+msgstr "StrongSwan 重载成功！"
+
+#: vpn/sts/views.py:121
+msgid "tunnel is up!"
+msgstr "隧道已启动！"
+
+#: vpn/sts/views.py:123
+msgid "tunnel is down!"
+msgstr "隧道ID隧道已关闭！"
